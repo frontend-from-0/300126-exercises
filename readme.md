@@ -1,1 +1,0 @@
-Exercises for group 300126.
