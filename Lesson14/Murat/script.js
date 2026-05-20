@@ -47,7 +47,7 @@ console.log(`Ex.22.1: ${demonstrationCounter}`);
 demonstrationCounter+=1;
 console.log(`Ex.22.2: ${demonstrationCounter}`);
 
-demonstrationCounter+=1;
+demonstrationCounter = demonstrationCounter+1;
 console.log(`Ex.22.3: ${demonstrationCounter}`);
 
 
