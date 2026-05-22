@@ -46,7 +46,7 @@ console.log("Result 25_2:", "Variable after update:", valueForPostfixIncrement);
 
 // 26. Declare valueBeforeDoubleStep=-3. Increment it by 1 using prefix ++, then multiply the result by 2 and log the final value.
 let valueBeforeDoubleStep = -3;
-let finalValue26 = (++valueBeforeDoubleStep) * 2;
+const finalValue26 = (++valueBeforeDoubleStep) * 2;
 console.log("Final Value 26:", finalValue26);
 
 // 27. Declare prefixBaseValue=2 and addedNeighborValue=3. Increment prefixBaseValue using the prefix ++ operator, then add addedNeighborValue to the result and log it.
