@@ -1,10 +1,10 @@
 // 18. Declare divisionDividendAmount=10 and divisionDivisorAmount=3. Log the quotient as divisionQuotient and the subtraction difference (divisionDividendAmount - divisionDivisorAmount) as subtractionDifference.
 // CODE HERE
 
-let  divisionDividendAmount=10;
-let divisionDivisorAmount=3;
-let divisionQuotient = divisionDividendAmount / divisionDivisorAmount;
-let subtractionDifference = divisionDividendAmount - divisionDivisorAmount;
+const divisionDividendAmount = 10;
+const divisionDivisorAmount = 3;
+const divisionQuotient = divisionDividendAmount / divisionDivisorAmount;
+const subtractionDifference = divisionDividendAmount - divisionDivisorAmount;
 
 console.log(divisionQuotient);
 console.log(subtractionDifference);
@@ -43,13 +43,11 @@ console.log(Math.PI);
 let demonstrationCounter = 0;
 
 demonstrationCounter++;
-console.log(demonstrationCounter);
-
+console.log(`Ex.22: Using postfix increment (demonstrationCounter++): ${demonstrationCounter}`);
 demonstrationCounter += 1;
-console.log(demonstrationCounter);
-
+console.log(`Ex.22: Using += 1 increment method: ${demonstrationCounter}`);
 demonstrationCounter = demonstrationCounter + 1;
-console.log(demonstrationCounter);
+console.log(`Ex.22: Using demonstrationCounter = demonstrationCounter + 1: ${demonstrationCounter}`);
 
 // 23. Declare baselineCelsiusTemp=20. Increase it by 5 and log the result.
 // CODE HERE
@@ -92,4 +90,4 @@ let addedNeighborValue = 3;
 
 let result = ++prefixBaseValue + addedNeighborValue;
 
-console.log(result);
+console.log(result);git
