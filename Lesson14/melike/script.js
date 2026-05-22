@@ -9,7 +9,7 @@ console.log("Result 18:" ,"divisionQuotient:", divisionQuotient,"subtractionDiff
 const applicantFirstName = "John";
 const applicantLastName = "Doe";
 const applicantFullName = `${applicantFirstName} ${applicantLastName}`;
-console.log("Result 19:", "applicantFullName:", applicantFullName);
+console.log("Result 19:", "Applicant Full Name:", applicantFullName);
 
 // 20. Declare productFactorSeven=7 and productFactorTwo=2. Log the product of productFactorSeven and productFactorTwo.
 const productFactorSeven = 7;
