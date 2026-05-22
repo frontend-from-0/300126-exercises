@@ -52,5 +52,5 @@ console.log("Final Value 26:", finalValue26);
 // 27. Declare prefixBaseValue=2 and addedNeighborValue=3. Increment prefixBaseValue using the prefix ++ operator, then add addedNeighborValue to the result and log it.
 let prefixBaseValue = 2;
 const addedNeighborValue = 3;
-let finalResult27 = (++prefixBaseValue) + addedNeighborValue;
+const finalResult27 = (++prefixBaseValue) + addedNeighborValue;
 console.log("Final Result 27:", finalResult27);
