@@ -4,7 +4,7 @@ const divisionDividendAmount = 10;
 const divisionDivisorAmount = 3;
 const divisionQuotient = divisionDividendAmount / divisionDivisorAmount;
 const subtractionDifference = divisionDividendAmount - divisionDivisorAmount;
-console.log("Ex.18: Division of number has given: ", divisionQuotient , ", and substraction of those number is: ", subtractionDifference);
+console.log(`Ex.18: Division result of ${divisionDividendAmount} / ${divisionDivisorAmount} is ${divisionQuotient}, and the subtraction result is ${subtractionDifference}`);
 
 // 19. Declare applicantFirstName and applicantLastName. Create applicantFullName by concatenating them with a space and log applicantFullName.
 // CODE HERE
