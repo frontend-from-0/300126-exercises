@@ -36,7 +36,7 @@ console.log(`Ex.21: Pi is: ${Math.PI}`)
 // 22. Declare demonstrationCounter=0. Increment it using three different methods (e.g., demonstrationCounter++, demonstrationCounter+=1, demonstrationCounter=demonstrationCounter+1) and log the result each time.
 // CODE HERE
 let demonstrationCounter = 0;
-console.log(`Ex.22: Incrementing 0. Number is now: ${demonstrationCounter}, Increment by ++ and number is now :${++demonstrationCounter}, Increment by += and number is now :${demonstrationCounter+=1}, Increment by a = a + 1 and number is now :${demonstrationCounter = demonstrationCounter + 1}`);
+console.log(`Ex.22: Initial value: ${demonstrationCounter}, after postfix increment (counter++): ${demonstrationCounter++}, after += 1: ${demonstrationCounter += 1}, after counter = counter + 1: ${demonstrationCounter = demonstrationCounter + 1}`);
 
 
 // 23. Declare baselineCelsiusTemp=20. Increase it by 5 and log the result.
