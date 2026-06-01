@@ -64,4 +64,4 @@ console.log("Ex.26: " + ++valueBeforeDoubleStep * 2);
 let prefixBaseValue=2;
 const addedNeighborValue=3;
 let newNumbersEx27 = ++prefixBaseValue + addedNeighborValue;
-console.log("Ex.27: After prefix increase and adding neighbor value, the result is: " + newNumbersEx27);
+console.log("Ex.27: After prefix increment and adding neighbor value, the result is: " + newNumbersEx27);
