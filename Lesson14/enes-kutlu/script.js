@@ -52,7 +52,7 @@ console.log(`Ex.24: Before prefix increment: ${valueForPrefixIncrement}, after p
 // 25. Declare valueForPostfixIncrement=8. Increment it using the postfix ++ operator and log both the expression result and the variable after the update, as appropriate for postfix ++.
 // CODE HERE
 let valueForPostfixIncrement = 8;
-console.log("Ex.25: Before PostfixIncrement: " + valueForPostfixIncrement++ + ", After PostfixIncrement: " + valueForPostfixIncrement);
+console.log("Ex.25: Value before postfix increment: " + valueForPostfixIncrement++ + ", value after postfix increment: " + valueForPostfixIncrement);
 
 // 26. Declare valueBeforeDoubleStep=-3. Increment it by 1 using prefix ++, then multiply the result by 2 and log the final value.
 // CODE HERE
