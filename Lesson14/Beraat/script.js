@@ -62,9 +62,9 @@ console.log("Ex.24: ", "And after that it is", valueForPrefixIncrement);
 // CODE HERE
 
 let valueForPostfixIncrement = 8;
-console.log("Ex.25: ", "Before it is", valueForPostfixIncrement);
-console.log("Ex:25: ", "After it is", valueForPostfixIncrement++);
-console.log("Ex.25: ", "And after that it is", valueForPostfixIncrement);
+console.log("Ex.25: ", "Initial value before postfix increment: ", valueForPostfixIncrement);
+console.log("Ex:25: ", "Result returned by valueForPostfixIncrement++: ", valueForPostfixIncrement++);
+console.log("Ex.25: ", "Variable value after applying postfix increment: ", valueForPostfixIncrement);
 
 // 26. Declare valueBeforeDoubleStep=-3. Increment it by 1 using prefix ++, then multiply the result by 2 and log the final value.
 // CODE HERE
