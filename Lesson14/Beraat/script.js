@@ -78,7 +78,7 @@ console.log("Ex.26: ", "The result is", valueBeforeDoubleStep);
 // CODE HERE
 
 let prefixBaseValue = 2;
-let addedNeighborValue = 3;
+const addedNeighborValue = 3;
 ++prefixBaseValue;
 prefixBaseValue+=addedNeighborValue;
 console.log("Ex.27: ", "The result is", prefixBaseValue)
