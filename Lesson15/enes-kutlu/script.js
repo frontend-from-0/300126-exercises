@@ -199,7 +199,7 @@ startsWithA("Along with the Vanderbooms")
    - Log the result.
 */
 function sliceLastN(text, n){
-  const cuttedLastPart = text.slice(0, -(n)); //NOTE BY ME:  If we want to took just the sliced parts, we can delete zero and comma, and leave only -(n), that will give us the cutted part
+  const cuttedLastPart = text.slice(-n);
   console.log(cuttedLastPart);
 };
 console.log("\nEx.16:");
