@@ -464,7 +464,7 @@ function findWordPosition(sentence, word){
   if(sentence.indexOf(word) >= 0){
     console.log(sentence.indexOf(word))
   } else {
-    console.log("-1")
+    console.log("Not found")
   }
 }
 console.log("\nEx.29:");
