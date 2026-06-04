@@ -417,9 +417,7 @@ containsNumber("abc123")
 
 
 function padString(str, maxLength){
-  if (str.length < maxLength){
     console.log(str.padEnd(maxLength, '*'))
-  }
   return;
 }
 console.log("\nEx.26:");
