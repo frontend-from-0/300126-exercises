@@ -156,7 +156,7 @@ getDayOfWeek(1)
    - Log the repeated result.
 */
 function repeatWord(word, times){
-  if (typeof text !== "string" || typeof maxLength !== "number")   {
+  if (typeof word !== "string" || typeof times !== "number")   {
     console.log("Please provide a valid value")
     return;
   } 
