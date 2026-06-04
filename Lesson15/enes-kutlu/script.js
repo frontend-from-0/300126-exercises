@@ -92,7 +92,8 @@ evenOrOdd(7)
 */
 function checkProtocol(url){
   if (typeof url !== "string"){
-    console.log("Please check the url address")
+    console.log("Please check the url address");
+    return;
   }
   if(url.toLowerCase().startsWith("https")){
     console.log("Secure connection")
