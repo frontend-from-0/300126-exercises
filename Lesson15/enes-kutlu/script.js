@@ -325,7 +325,7 @@ isLongString("Adabra")
    - Otherwise, log "This text is not spam."
 */
 function isSpam(text){
-  if (text.includes("spam")){
+  if (text.toLowerCase().includes("spam")){
     console.log("This text is spam.")
   } else {
     console.log("This text is not spam.")
