@@ -174,6 +174,10 @@ repeatWord("Moon", 4)
    - Log the censored sentence.
 */
 function censorWord(sentence, target){
+  if (typeof sentence !== "string" || typeof target !== "string")   {
+    console.log("Please provide a valid value")
+    return;
+  } 
   console.log(sentence.replaceAll(target, "****"))
 }
 console.log("\nEx.14:");
@@ -186,6 +190,11 @@ censorWord("I Lost Something in the Hills", "Hills")
    - Log "Starts with A" or "Does not start with A".
 */
 function startsWithA(str){
+  if (typeof str !== "string"){
+    console.log("Please provide a valid value")
+    return;
+  }
+
   if (str.charAt(0) == "A"){
     console.log("Starts with A");
   } else {
@@ -201,6 +210,10 @@ startsWithA("Along with the Vanderbooms")
    - Log the result.
 */
 function sliceLastN(text, n){
+if(typeof text !== "string" || typeof n !== "number"){
+  console.log("Please provide a valid value");
+  return;
+} 
   const cuttedLastPart = text.slice(-n);
   console.log(cuttedLastPart);
 };
@@ -218,6 +231,10 @@ sliceLastN("AlfredHoffman", 2)
    - Log the grade.
 */
 function gradeChecker(score){
+  if(typeof score !== "number"){
+    console.log("Please provide a valid value");
+    return;
+  }
   if (score >= 90) {
     console.log("A")
   } else if (score >= 80) {
@@ -243,6 +260,10 @@ gradeChecker(28);
 */
 
 function replaceCharacter(str, oldChar, newChar){
+  if(typeof str !== "string" || typeof oldChar !== "string" || typeof newChar !== "string"){
+    console.log("Please provide a valid value");
+    return;
+  }
   let switchChars = str.replaceAll(oldChar, newChar)
   console.log(switchChars)
 }
@@ -259,6 +280,7 @@ replaceCharacter("Life and Breathe", "f", "v")
    - Log the result for at least two different strings.
 */
 function capitalizeFirst(text){
+
   let upperCaseFirstLetter = text.charAt(0).toUpperCase();
   let restOfTheText = text.slice(1);
   console.log(upperCaseFirstLetter + restOfTheText)
@@ -309,6 +331,10 @@ trafficLight(83);
    - Log "Long string" or "Short string".
 */
 function isLongString(str){
+  if(typeof str !== "string"){
+    console.log("Enter a valid value")
+    return;
+  }
   if (str.length >= 10){
     console.log("Long string");
   } else {
@@ -327,6 +353,10 @@ isLongString("Adabra")
    - Otherwise, log "This text is not spam."
 */
 function isSpam(text){
+  if(typeof text !== "string"){
+    console.log("Enter a valid value")
+    return;
+  }
   if (text.toLowerCase().includes("spam")){
     console.log("This text is spam.")
   } else {
@@ -345,8 +375,12 @@ isSpam("This is not a spam(it is actually)")
    - Do not use loops; assume exactly two words.
 */
 function getTwoPartInitials(fullName){
+  if(typeof fullName !== "string"){
+    console.log("Enter a valid value")
+    return;
+  }
   let a = fullName.split(" ");
-  let firstLetters = a[0].charAt(0) + "." + a[1].charAt(0) + "."
+  let firstLetters = a[0].charAt(0).toUpperCase() + "." + a[1].charAt(0).toUpperCase() + "."
   console.log(firstLetters)
 }
 console.log("\nEx.23:");
@@ -361,6 +395,10 @@ getTwoPartInitials("Rose Vanderboom ");
    - Log the season or "Invalid month" if out of range.
 */
 function getSeason(monthNum){
+  if(typeof monthNum !== "number"){
+    console.log("Enter a valid value")
+    return;
+  }
   switch (monthNum){
     case 12:
     case 1:
@@ -400,6 +438,10 @@ getSeason(7);
    - Test with strings like "hello", "room 5", and "abc123".
 */
 function containsNumber(str){
+  if(typeof str !== "string"){
+    console.log("Enter a valid value")
+    return;
+  }
   if(str.match(/\d/g)){
     console.log("Contains number");
   } else {
@@ -419,11 +461,11 @@ containsNumber("abc123")
 
 
 function padString(str, maxLength){
-  if (typeof str !== "string"){
+  if (typeof str !== "string" || typeof maxLength !== "number"){
     console.log("Enter a valid string")
     return;
   }
-    console.log(str.padEnd(maxLength, '*'))
+  console.log(str.padEnd(maxLength, '*'))
   return;
 }
 console.log("\nEx.26:");
@@ -437,6 +479,10 @@ padString("Abraca", 12);
      - "Too young to vote" otherwise
 */
 function canVote(age){
+  if (typeof age !== "number"){
+    console.log("Enter a valid number")
+    return;
+  }
   if (age >= 18){
     console.log("Can vote")
   } else {
@@ -455,6 +501,10 @@ canVote(26);
    - Example: "hello" -> "olleh"
 */
 function reverseString(text){
+  if (typeof text !== "string"){
+    console.log("Enter a valid string")
+    return;
+  }
   const reverse = text.split("").reverse().join("");
   console.log(reverse);
 }
@@ -467,6 +517,10 @@ reverseString("Goliath");
    - Log the index or log "Not found" if it's -1.
 */
 function findWordPosition(sentence, word){
+  if (typeof sentence !== "string" || typeof word !== "string"){
+    console.log("Enter a valid string")
+    return;
+  }
   if(sentence.indexOf(word) >= 0){
     console.log(sentence.indexOf(word))
   } else {
@@ -488,6 +542,10 @@ findWordPosition("Later, in 1909, he has created a large contraption down in the
    - Log the result.
 */
 function calculate(a, operator, b){
+  if (typeof a !== "number" || typeof b !== "number" || typeof operator !== "string"){
+    console.log("Enter a valid string")
+    return;
+  }
   switch(operator){
     case "+":
       console.log(a + b);
