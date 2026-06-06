@@ -70,5 +70,5 @@ console.log("Ex.26: Final value after increment and double:", finalValue)
 
 let prefixBaseValue = 2;
 let addedNeighborValue = 3;
-let totalValue = (++prefixBaseValue) + addedNeighborValue;
+const totalValue = (++prefixBaseValue) + addedNeighborValue;
 console.log("EX.27 Total value after increment prefix Base Value and added Neighbor Value", totalValue)
