@@ -61,7 +61,7 @@ console.log("Ex.24: Varaible after update", valueForPostfixIncrement)
 // CODE HERE
 
 let valueBeforeDoubleStep = -3;
-let finalValue = (++valueBeforeDoubleStep) * 2;
+const finalValue = (++valueBeforeDoubleStep) * 2;
 console.log("Ex.26: Final value after increment and double:", finalValue)
 
 
