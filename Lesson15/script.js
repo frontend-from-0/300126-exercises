@@ -274,7 +274,7 @@ function trafficLight(color) {
 
 trafficLight("red");
 trafficLight("Yellow");
-inputLight("blue");
+trafficLight("blue");
 /*
 21. Check String Length (if-else)
    - Define a function `isLongString(str)` that checks if the string length
@@ -408,8 +408,8 @@ padString("javascript", 5);
      - "Can vote" if age >= 18
      - "Too young to vote" otherwise
 */
-If-Else: Voting Eligibility
-   - Define a function `canVote(age)` that logs:
+
+   - function `canVote(age)` that logs:
      - "Can vote" if age >= 18
      - "Too young to vote" otherwise
 /*
