@@ -102,7 +102,7 @@ censorWord("This is bad word test", "bad");
 
 // 15. Check First Character (if-else)
 function startsWithA(str) {
-  if (str.charAt(0) === "A") {
+   if (str.charAt(0).toUpperCase() === "A") {
     console.log("Starts with A");
   } else {
     console.log("Does not start with A");
@@ -135,7 +135,30 @@ function gradeChecker(score) {
 }
 gradeChecker(85);
 gradeChecker(55);
+// Switch version
+function gradeChecker(score) {
+    let grade;
 
+    switch (true) {
+        case score >= 90:
+            grade = "A";
+            break;
+        case score >= 80:
+            grade = "B";
+            break;
+        case score >= 70:
+            grade = "C";
+            break;
+        case score >= 60:
+            grade = "D";
+            break;
+        default:
+            grade = "F";
+            break;
+    }
+
+    console.log(grade);
+}
 // 18. Character Replacement
 function replaceCharacter(str, oldChar, newChar) {
   console.log(str.replaceAll(oldChar, newChar));
