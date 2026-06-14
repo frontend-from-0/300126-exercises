@@ -97,7 +97,7 @@ reverseWords("hello world");
 function filterLongWords(words, minLength) {
   const result = [];
   for (let i = 0; i < words.length; i++) {
-    if (words[i].length >= minLength) {
+    if (words[i].length > minLength) {
       result.push(words[i]);
     }
   }
