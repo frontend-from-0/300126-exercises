@@ -102,7 +102,7 @@ censorWord("This is bad word test", "bad");
 
 // 15. Check First Character (if-else)
 function startsWithA(str) {
-  if (str.charAt(0) === "A") {
+  if (str.charAt(0).toUpperCase() === "A") {
     console.log("Starts with A");
   } else {
     console.log("Does not start with A");
