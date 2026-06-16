@@ -64,7 +64,7 @@ function countOddEven(numbers) {
       );
       return;
     }
-    if (numbers[i] % 2 == 0) {
+    if (numbers[i] % 2 === 0) {
       countEven++;
     } else {
       countOdd++;
@@ -181,7 +181,7 @@ doubleValues([3, 6, 9]);
 function printCharacters(str) {
   if (typeof str !== `string`) {
     console.warn(
-      `Provided input contains a non-numeric value. Ckeck the input and try again.`,
+      `Provided input contains a string value. Ckeck the input and try again.`,
     );
     return;
   }
@@ -449,7 +449,7 @@ function countOccurrences(arr, word) {
   }
   let countWord = 0;
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] == word) {
+    if (arr[i] === word) {
       countWord++;
     }
   }
@@ -469,7 +469,7 @@ countOccurrences(3, 5, 3, 2, "3");
 
 function removeFalsyValues(arr) {
   if (!Array.isArray(arr)) {
-    console.log(`Provided input is not an array or word is not a string`);
+    console.log(`Provided input is not an array`);
     return;
   }
   let newArray = [];
@@ -496,9 +496,8 @@ function sumDigits(str) {
     console.log("Provided input is not an string");
     return;
   }
-  let array = str.split("");
   let sum = 0;
-  for (const char of array) {
+  for (const char of str) {
     let converted = Number(char);
     if (!Number.isNaN(converted) && char != " ") {
       sum += converted;
@@ -519,7 +518,7 @@ sumDigits(9386391);
 
 function averageArray(numbers) {
   if (!Array.isArray(numbers) || numbers.length === 0) {
-    console.log(`Provided input is not an array or word is not a string`);
+    console.log(`Provided input is not a valid array or the array is empty.`);
     return;
   }
   let sum = 0;
