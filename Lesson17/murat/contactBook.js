@@ -72,7 +72,7 @@ function displayAllContacts(contacts, currentAllowedFields) {
     );
     return;
   }
-  if (contacts.length == 0) {
+  if (contacts.length === 0) {
     console.log("No contacts in the list.");
     return;
   }
@@ -81,7 +81,7 @@ function displayAllContacts(contacts, currentAllowedFields) {
       console.warn("This element is not a real object, skipping...");
       continue;
     }
-    if (Object.keys(item).length == 0) {
+    if (Object.keys(item).length === 0) {
       console.log("Skipping completely empty object...");
       continue;
     }
@@ -165,7 +165,7 @@ function addContact(name, phone, email, contactList) {
 
   const cleanPhone = phone.replace(`+`, ``);
   if (isNaN(cleanPhone)) {
-    console.log(`"❌ Error: Phone number must contain only digits."`);
+    console.log(`❌ Error: Phone number must contain only digits.`);
     return;
   }
 
@@ -263,15 +263,15 @@ function updateContact(name, newPhone, newEmail, contactList) {
   }
 
   console.log(`Updating contact for: ${name}...`);
-  const updateContact = findContact(name, contactList);
-  if (!updateContact) {
+  const contactToUpdate = findContact(name, contactList);
+  if (!contactToUpdate) {
     console.log(
       `❌ Error: No contact found with the name '${name}' to update.`,
     );
     return;
   }
-  updateContact.phone = newPhone.replace("+", "").trim();
-  updateContact.email = newEmail.trim();
+  contactToUpdate.phone = newPhone.replace("+", "").trim();
+  contactToUpdate.email = newEmail.trim();
   console.log(`✅ Success: ${name}'s contact info has been updated!`);
 }
 
