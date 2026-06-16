@@ -9,7 +9,7 @@
 function compareNumbers(a, b) {
     console.log(`Ex.7:`)
     if (typeof a !== "number" || typeof b !== "number")   {
-    console.log("Please provide a number")
+    console.log("Both parameters must be numbers")
     return; }
     if (a> b){
         console.log(`a is bigger`)
