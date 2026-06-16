@@ -299,7 +299,7 @@ function findWordsWithLetter(words, letter) {
   }
   console.log("Result23:", filteredWords);
 }
-words = ["coding", "nosleep", "togiveup", "coffee", "endlessbug" , "grumbling","usinglittleai","fun","","failure","finalsuccess", "lollygag"];
+const words = ["coding", "nosleep", "togiveup", "coffee", "endlessbug" , "grumbling","usinglittleai","fun","","failure","finalsuccess", "lollygag"];
 findWordsWithLetter(words, "n");
 
 
