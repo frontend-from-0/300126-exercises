@@ -40,7 +40,7 @@ function areEqualIgnoreCase(str1, str2) {
     console.log("Please provide a valid string")
     return;
   }
-  if (str1.toLocaleLowerCase === str2.toLocaleLowerCase) {
+if (str1.toLocaleLowerCase() === str2.toLocaleLowerCase()) {
     console.log(`Strings are equal.`)
   }
   else {
