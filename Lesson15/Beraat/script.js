@@ -16,7 +16,7 @@ function compareNumbers(a, b) {
     } else if (b>a) {
         console.log(`b is bigger`)
     } else {
-        "Numbers are equal"
+        console.log("Numbers are equal");
     }
 }
 compareNumbers(9,3);
