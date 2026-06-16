@@ -175,7 +175,7 @@ logElementsWithIndex(["apple", "banana", "cherry"]);
 */
 function findMin(numbers) {
   if (numbers.length === 0) {
-    console.log("Result17: Array is empty");
+    console.log("Ex. 17: Provided array is empty.");
     return;
   }
   let min = numbers[0];
