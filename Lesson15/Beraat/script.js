@@ -9,6 +9,7 @@
 function compareNumbers(a, b) {
     console.log(`Ex.7:`)
     if (typeof a !== "number" || typeof b !== "number")   {
+    console.log("Please provide a number")
     console.log("Both parameters must be numbers")
     return; }
     if (a> b){
@@ -16,6 +17,7 @@ function compareNumbers(a, b) {
     } else if (b>a) {
         console.log(`b is bigger`)
     } else {
+        "Numbers are equal"
         console.log("Numbers are equal");
     }
 }
@@ -40,6 +42,7 @@ function areEqualIgnoreCase(str1, str2) {
     console.log("Please provide a valid string")
     return;
   }
+  if (str1.toLocaleLowerCase === str2.toLocaleLowerCase) {
 if (str1.toLocaleLowerCase() === str2.toLocaleLowerCase()) {
     console.log(`Strings are equal.`)
   }
