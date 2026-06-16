@@ -431,7 +431,7 @@ function findWordsWithLetter(words, letter) {
   let filteredArray = [];
   for (const item of words) {
     if (
-      typeof item == "string" &&
+      typeof item === "string" &&
       item.toLowerCase().includes(letter.toLowerCase())
     ) {
       filteredArray.push(item);
