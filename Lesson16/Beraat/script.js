@@ -40,7 +40,7 @@ function filterNegative(numbers) {
   }
   let allPositive = [];
   for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] > 0) {
+    if (numbers[i] >= 0) {
       allPositive.push(numbers[i]);
     }
   }
