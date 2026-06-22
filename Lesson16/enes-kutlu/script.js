@@ -325,12 +325,11 @@ function sumDigits(str) {
     return;
   }
   let totalSum = 0;
-  let strSplit = str.split("");
-  for (let i = 0; i < strSplit.length; i++) {
-    if (/\d+/.test(strSplit[i])) {
-      totalSum += Number(strSplit[i])
-    }
+  for (let i = 0; i < str.length; i++) {
+  if (/\d/.test(str[i])) {
+    totalSum += Number(str[i]);
   }
+}
   console.log(totalSum);
 }
 
