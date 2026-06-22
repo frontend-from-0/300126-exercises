@@ -152,7 +152,7 @@ function addContact(name, phone, email, contactList) {
     return;
   }
 
-  console.log("Adding a new contact.");
+  console.log(`Adding a new contact: ${name}`);
   const maybeExistingContact = findContact(name, contactList);
   if (maybeExistingContact) {
     console.warn("This guy is already here.");
@@ -229,7 +229,7 @@ function updateContact(name, newPhone, newEmail, contactList) {
   if (maybeExistingContact) {
     maybeExistingContact.phone = newPhone;
     maybeExistingContact.email = newEmail;
-    console.log("Contact updated successfully.");
+    console.log(`Contact ${name} updated successfully.`);
   } else {
     console.log("No contact found with the name:", name);
   }
