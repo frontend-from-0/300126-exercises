@@ -54,6 +54,16 @@ class ShoppingCart {
 
   // If you define Item class for creating items, then modify addItem to accept one parameter (object) instead of 3.
   addItem(name, price, quantity) {
+    if (
+      typeof name !== "string" ||
+      typeof price !== "object" ||
+      typeof price.amount !== "number" ||
+      typeof price.currency !== "string" ||
+      typeof quantity !== "number"
+    ) {
+      console.log("Please provide valid value");
+      return;
+    }
     for (const item of this.#items) {
       if (item.name === name) {
         console.log(
@@ -68,6 +78,10 @@ class ShoppingCart {
   }
 
   removeItem(name) {
+    if (typeof name !== "string") {
+      console.log("Please provide valid value");
+      return;
+    }
     for (let i = 0; i < this.#items.length; i++) {
       if (this.#items[i].name === name) {
         console.log(`Found item ${name}, removing from the cart...`);
@@ -85,6 +99,10 @@ class ShoppingCart {
     return total;
   }
   applyDiscount(code) {
+     if (typeof code !== "string") {
+      console.log("Please provide valid value");
+      return;
+    }
     const discountCodes = {
       SAVE10: 10,
       SAVE20: 20,
@@ -94,7 +112,7 @@ class ShoppingCart {
       const lastTotal = this.getTotal() - saveAmount;
       console.log(`Price after discount: ${lastTotal}`);
     } else {
-      console.log(`Unespectid Code`);
+      console.log(`Unexpected Code`);
     }
   }
   getItemCount() {
@@ -123,8 +141,6 @@ console.log(cart.getItemCount());
 
 cart.clearCart();
 cart.viewCart();
-
-
 
 /*const cart = new ShoppingCart();
 cart.viewCart();
