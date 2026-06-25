@@ -326,7 +326,7 @@ function isLongString(str) {
     console.log("Enter a valid value");
     return;
   }
-  if (str.length >= 10) {
+  if (str.length > 10) {
     console.log("Long String");
   } else {
     console.log("Short string");
