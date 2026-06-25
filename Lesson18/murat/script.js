@@ -101,7 +101,7 @@ class ShoppingCart {
     console.log(`Item ${name} is not found in the cart`);
   }
   getTotal() {
-    console.log(`total fee is calculated`)
+    console.log(`total fee is calculated`);
     let totalCost = 0;
     for (const item of this.#items) {
       if (item.price && typeof item.price.amount === "number") {
@@ -113,21 +113,33 @@ class ShoppingCart {
   }
 
   applyDiscount(code) {
+    console.log("--------------");
+
     console.log(`Method triggered with code: "${code}"`);
     const newTotalCost = this.getTotal();
     let currentTotal = newTotalCost;
-    const discountCode = "SAVE20";
-    if (code === discountCode) {
-      currentTotal = newTotalCost * 0.8;
-      console.log(`Congratulations! You've earned a 20% discount.`)
-    } else {
-      console.log(`Invalid or no discount code applied.`);
+    const discountCode = {
+      SAVE10: 0.9,
+      SAVE20: 0.8,
+      SAVE30: 0.7,
+    };
+
+    for (const key in discountCode) {
+      if (code === key) {
+        currentTotal = newTotalCost * discountCode[key];
+        console.log(
+          `Congratulations! You've earned a ${((1 - discountCode[key]) * 100).toFixed(0)}% discount.`,
+        );
+        break;
+      }
+    }
+    if (currentTotal === newTotalCost) {
+      console.log(`Invalid discount code. No discount applied.`);
     }
     console.log(`Total price after discount: ${currentTotal} TRY`);
-     return currentTotal;
+    return currentTotal;
   }
 }
-
 const cart = new ShoppingCart();
 cart.viewCart();
 
@@ -144,7 +156,6 @@ cart.viewCart();
 cart.getTotal();
 cart.applyDiscount("SAVE20");
 cart.applyDiscount("SAVE10");
-
 
 /*
 -----------------------------------------------------------
