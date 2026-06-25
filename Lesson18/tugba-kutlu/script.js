@@ -39,7 +39,7 @@ class ShoppingCart {
 
   // Methods
   viewCart() {
-    console.log('------- Viewing the cart -------');
+    console.log("------- Viewing the cart -------");
     if (this.#items.length > 0) {
       for (const item of this.#items) {
         console.log(
@@ -49,8 +49,7 @@ class ShoppingCart {
     } else {
       console.log(`The cart is empty.`);
     }
-    console.log('--------------');
-
+    console.log("--------------");
   }
 
   // If you define Item class for creating items, then modify addItem to accept one parameter (object) instead of 3.
@@ -71,16 +70,63 @@ class ShoppingCart {
   removeItem(name) {
     for (let i = 0; i < this.#items.length; i++) {
       if (this.#items[i].name === name) {
-        console.log(`Found item ${name}, removing from the cart...`)
+        console.log(`Found item ${name}, removing from the cart...`);
         this.#items.splice(i, 1);
         return;
       }
     }
-    console.log(`Item ${name} is not found in the cart`)
+    console.log(`Item ${name} is not found in the cart`);
+  }
+  getTotal() {
+    let total = 0;
+    for (const item of this.#items) {
+      total += item.price.amount * item.quantity;
+    }
+    return total;
+  }
+  applyDiscount(code) {
+    const discountCodes = {
+      SAVE10: 10,
+      SAVE20: 20,
+    };
+    if (discountCodes[code]) {
+      const saveAmount = (this.getTotal() * discountCodes[code]) / 100;
+      const lastTotal = this.getTotal() - saveAmount;
+      console.log(`Price after discount: ${lastTotal}`);
+    } else {
+      console.log(`Unespectid Code`);
+    }
+  }
+  getItemCount() {
+    let count = 0;
+    for (const item of this.#items) {
+      count += item.quantity;
+    }
+    return count;
+  }
+  clearCart() {
+    this.#items = [];
+    console.log("Cart has been cleared!");
   }
 }
-
 const cart = new ShoppingCart();
+cart.addItem("laptop", { amount: 1000.5, currency: "EUR" }, 1);
+cart.addItem("phone", { amount: 500, currency: "EUR" }, 2);
+
+console.log(cart.getTotal());
+
+cart.applyDiscount("SAVE10");
+cart.applyDiscount("SAVE20");
+cart.applyDiscount("SAVE99");
+
+console.log(cart.getItemCount());
+
+cart.clearCart();
+cart.viewCart();
+
+
+
+/*const cart = new ShoppingCart();
 cart.viewCart();
 
 cart.addItem('laptop', { amount: 1000.5, currency: 'EUR' }, 1);
@@ -95,7 +141,7 @@ cart.removeItem('apples');
 
 
 
-cart.viewCart();
+cart.viewCart();*/
 
 /*
 -----------------------------------------------------------
