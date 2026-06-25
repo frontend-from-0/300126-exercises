@@ -392,7 +392,7 @@ getTwoPartInitials("tuğba kutlu");
 */
 
 function getSeason(monthNum) {
-  if (typeof monthNum !== "string") {
+  if (typeof monthNum !== "number") {
     console.log("Enter a valid value");
     return;
   }
