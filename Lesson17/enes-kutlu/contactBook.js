@@ -65,7 +65,7 @@ Example output:
 
 function displayAllContacts(contacts) {
   if (typeof contacts === "undefined") {
-    console.log("Please enter a valid value. ");
+    console.log("Please provide a contacts array.");
     return;
   }
   if (!Array.isArray(contacts)) {
