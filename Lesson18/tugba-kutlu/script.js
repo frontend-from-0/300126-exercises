@@ -43,7 +43,7 @@ class ShoppingCart {
     if (this.#items.length > 0) {
       for (const item of this.#items) {
         console.log(
-          `Current item - name: ${item.name}, price: ${item.price.amout} ${item.price.currency}, quantity ${item.quantity}`,
+          `Current item - name: ${item.name}, price: ${item.price.amount} ${item.price.currency}, quantity ${item.quantity}`,
         );
       }
     } else {
