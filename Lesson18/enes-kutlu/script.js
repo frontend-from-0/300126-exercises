@@ -157,7 +157,6 @@ cart.addItem("phone", { amount: 500, currency: "EUR" }, 2);
 cart.addItem("laptop", { amount: 1000.5, currency: "EUR" }, 2);
 cart.viewCart();
 
-// cart.items.splice(1, 2); -- I don't remember why we add that, it doesn't work.
 
 cart.removeItem("laptop");
 cart.removeItem("apples");
