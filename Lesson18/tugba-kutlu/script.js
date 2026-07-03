@@ -79,7 +79,7 @@ class ShoppingCart {
 
   removeItem(name) {
     if (typeof name !== "string") {
-      console.log("Please provide valid value");
+      console.log("Please provide string value for name.");
       return;
     }
     for (let i = 0; i < this.#items.length; i++) {
