@@ -83,7 +83,14 @@ class ShoppingCart {
      - Remove the item from the `#items` array if it exists.
   */
   removeItem(name) {
-    this.#items = this.#items.filter(item => item.name !== name);
+    const itemExists = this.#items.find(item => item.name === name);
+
+    if (itemExists) {
+      this.#items = this.#items.filter(item => item.name !== name);
+      console.log(`Removed item '${name}' from the cart.`);
+    } else {
+      console.log(`Item '${name}' could not be found.`);
+    }
   }
 
   /*
