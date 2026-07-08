@@ -373,7 +373,7 @@ flattenArray([[8, 9], [10, 11]]);
     - Log the filtered array.
 */
 function findWordsWithLetter(words, letter){
-  if(typeof words !== "string" || typeof letter !== "string"){
+  if(!Array.isArray(words) || typeof letter !== "string"){
     console.log("Enter a valid value")
     return;
   }
