@@ -78,6 +78,7 @@ printCharacters("Cat");
 function sumObjectValues(obj) {
   if (typeof obj !== "object") {
     console.log("Enter a valid value");
+    return;
   }
   let sum = 0;
   for (let num in obj) {
