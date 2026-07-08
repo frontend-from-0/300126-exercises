@@ -59,6 +59,7 @@ filterNegative([-1, 8, 9, -50, 4, -7]);
 function printCharacters(str) {
   if (typeof str !== "string") {
     console.log("Enter a valid value");
+    return;
   }
   for (let letter of str) {
     console.log(letter);
