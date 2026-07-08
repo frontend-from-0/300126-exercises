@@ -41,7 +41,7 @@ function filterNegative(numbers) {
     return;
   }
   let positiveNumArray = [];
-  for (let i = 0; i <= numbers.length; i++) {
+  for (let i = 0; i < numbers.length; i++) {
     if (numbers[i] >= 0) {
       positiveNumArray.push(numbers[i]);
     }
