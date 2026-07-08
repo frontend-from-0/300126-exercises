@@ -444,7 +444,7 @@ manageQueue(["darcy", "elizabeth"], "jane")
    - Logs the updated list.
 */
 function updateTodoList(todoList, startIndex, deleteCount, ...newTasks){
-  if(!Array.isArray(todoList || typeof startIndex !== "number" || typeof deleteCount !== "number")){
+  if(!Array.isArray(todoList) || typeof startIndex !== "number" || typeof deleteCount !== "number"){
     console.log("Enter a valid value")
     return;
   }
