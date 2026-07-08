@@ -422,7 +422,7 @@ pushPopExample(["apple", "pineapple"], "banana")
       - logs the final queue
 */
 function manageQueue(queue, newPerson){
-   if(typeof queue !== "string" || typeof newPerson !== "string"){
+   if(!Array.isArray(queue) || typeof newPerson !== "string"){
     console.log("Enter a valid value")
     return;
   }
