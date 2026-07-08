@@ -37,7 +37,7 @@ sumRange(1, 6);
 */
 function filterNegative(numbers) {
   if (!Array.isArray(numbers)) {
-    console.log("Enter a valid value");
+    console.log("Array is expected, please correct the input value.");
     return;
   }
   let positiveNumArray = [];
