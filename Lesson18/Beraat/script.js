@@ -238,7 +238,7 @@ class ShoppingCart {
     cartItem.quantity -= quantity;
     stockItem.quantity += quantity;
 
-    console.log(`${quantity} ${cartItem} item removed.`);
+    console.log(`${quantity} ${cartItem.name} item removed.`);
     this.viewCart();
     this.getTotal();
     console.log("--------------");
