@@ -76,7 +76,7 @@ function displayAllContacts(contacts) {
   console.log("\nStep 2:");
   console.log("Displaying all contacts...");
 
-  if (!Array.isArray(contacts) || contacts.length == 0) {
+  if (!Array.isArray(contacts) || contacts.length === 0) {
     console.log("No contacts in the list.");
     return;
   }
