@@ -302,7 +302,7 @@ function removeContact(name, contactList) {
   const contact = findContact(name, contactList);
 
   if (!contact) {
-    console.log(`No contact found with the name: ${name.toLowerCase().charAt(0).toUpperCase()+name.slice(1)}}`);
+    console.log(`No contact found with the name: ${name.toLowerCase().charAt(0).toUpperCase()+name.slice(1)}`);
     return;
   }
   const index = contactList.indexOf(contact);
