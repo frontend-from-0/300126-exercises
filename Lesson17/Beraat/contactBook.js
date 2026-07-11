@@ -175,7 +175,7 @@ function addContact({name, phone, email, contactList}) {
 
   const maybeExistingContact = findContact(name, contactList);
   if (maybeExistingContact) {
-    console.warn("This guy is already here.");
+    console.warn("This person already exists.");
     return;
   }
 
