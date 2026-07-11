@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appointment Booking</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container" id="form-content">
+      <header>
+        <h1>Book an Appointment</h1>
+      </header>
+
+      <form class="booking" id="booking-form">
+        <section class="calendar">
+          <label for="name" class="contact-form__label">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="contact-form__input"
+            maxlength="50"
+            placeholder="Enter Your Name"
+          />
+          <label for="email" class="contact-form__label">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="contact-form__input"
+            placeholder="myemail@domain.com"
+          />
+          <label for="date">Select a date</label>
+          <input type="date" id="date" />
+          <h2 id="timeslots-heading">Available Time Slots</h2>
+          <fieldset class="timeslots" aria-labelledby="timeslots-heading">
+            <legend class="hidden">Choose a time slot</legend>
+            <button
+              class="slot"
+              type="button"
+              aria-label="Select 09:00 time slot"
+            >
+              09:00
+            </button>
+            <button
+              class="slot"
+              type="button"
+              aria-label="Select 10:30 time slot"
+            >
+              10:30
+            </button>
+            <button
+              class="slot"
+              type="button"
+              aria-label="Select 13:00 time slot"
+            >
+              13:00
+            </button>
+            <button
+              class="slot"
+              type="button"
+              aria-label="Select 14:30 time slot"
+            >
+              14:30
+            </button>
+            <button
+              class="slot"
+              type="button"
+              aria-label="Select 16:00 time slot"
+            >
+              16:00
+            </button>
+          </fieldset>
+        </section>
+
+        <aside class="summary">
+          <h2>Your Appointment</h2>
+          <p>Name: <span id="selected-name">-</span></p>
+          <p>Email: <span id="selected-email">-</span></p>
+          <p>Date: <span id="selected-date">-</span></p>
+          <p>Time: <span id="selected-time">-</span></p>
+          <div class="btn">
+            <button id="confirm" disabled>Confirm Booking</button>
+            <button type="button" id="reset-btn">Reset</button>
+          </div>
+        </aside>
+      </form>
+    </div>
+
+    <div class="container hidden" id="confirmation-message">
+      <div class="confirmation-card">
+        <div class="success-icon">✔</div>
+
+        <h1>Appointment Confirmed!</h1>
+
+        <p class="confirmation-text">
+          Thank you! Your appointment has been booked successfully.
+        </p>
+
+        <div class="appointment-details">
+          <div class="detail">
+            <span class="label">👤 Name</span>
+            <span id="confirm-name"></span>
+          </div>
+
+          <div class="detail">
+            <span class="label">📧 Email</span>
+            <span id="confirm-email"></span>
+          </div>
+
+          <div class="detail">
+            <span class="label">📅 Date</span>
+            <span id="confirm-date"></span>
+          </div>
+
+          <div class="detail">
+            <span class="label">🕒 Time</span>
+            <span id="confirm-time"></span>
+          </div>
+        </div>
+
+        <button id="new-booking">Book Another Appointment</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
