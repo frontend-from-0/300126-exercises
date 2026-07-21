@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #214a3d;
+  color: #fff;
+  font-family: Verdana, sans-serif;
+}
+
+main {
+  max-width: 960px;
+  margin: 96px auto;
+}
+
+form {
+  max-width: 448px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 24px 0;
+}
+
+input {
+  background: #4dad8f;
+  border: none;
+  border-radius: 8px;
+  padding: 16px;
+  /* was #8fccb8 on #4dad8f, ~1.6:1 contrast, fails WCAG AA. Reusing the dark green
+     already used for .btn-success text gives ~4.7:1 against this background. */
+  color: #214a3d;
+}
+
+/* visible focus outline for keyboard users, since inputs have no border to show focus */
+input:focus {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+input::placeholder {
+  /* was using the browser default (too light on this green), now readable but still
+     clearly a placeholder, not typed text */
+  color: #143026;
+  opacity: 0.65;
+}
+
+/* fix: Chrome/Edge autofill (First Name, Last Name, etc.) forces its own blue/yellow
+   background + black text, which clashed with the other green inputs. This forces
+   autofilled inputs to keep the same look as every other input. */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #4dad8f inset;
+  -webkit-text-fill-color: #214a3d;
+  caret-color: #214a3d;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+.input-error {
+  /* was rgb(98, 37, 37) on the #214a3d body background, ~1.9:1 contrast, fails WCAG AA.
+     Light red gives ~7:1 against this dark green background. */
+  color: #ffb3b3;
+  font-size: 14px;
+}
+
+.btn-success {
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  display: block;
+  width: 100%;
+  font-weight: 900;
+
+  color: #214a3d;
+  background-color: #fff;
+}
+
+.btn-success:focus {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+#success {
+  margin-top: 24px;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #214a3d;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
