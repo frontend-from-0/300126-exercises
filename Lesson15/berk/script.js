@@ -190,11 +190,19 @@ areEqualIgnoreCase("cat", "dog");
 */
 
 function truncateString(text, maxLength) {
-  let exmp9 = text.slice(0, maxLength) + "...";
-  console.log(exmp9);
+  let result;
+  if (text.length > maxLength) {
+    result = text.slice(0, maxLength) + "...";
+  } else {
+    result = text;
+  }
+  console.log(result);
 }
 console.log("Ex. 9:");
 truncateString("test", 3);
+truncateString("test message", 6);
+truncateString("test message", 20);
+
 /*
 10. Check Even or Odd (if-else)
    - Define a function `evenOrOdd(number)` that:
