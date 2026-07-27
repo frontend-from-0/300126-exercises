@@ -36,6 +36,16 @@ const generalContacts = [
     phone: "00123345456",
     email: "example2@com",
   },
+  {
+    name: "Zeynep",
+    phone: "00123345456",
+    email: "example2@com",
+  },
+  {
+    name: "Beyza",
+    phone: "00123345456",
+    email: "example2@com",
+  },
 ];
 
 const workContacts = [
@@ -45,7 +55,7 @@ const workContacts = [
     email: "work-contact@com",
   },
 ];
-
+console.log("========== STEP 1 is completed ==========");
 /*
 -----------------------------------------------------------
   STEP 2: Display All Contacts
@@ -96,7 +106,6 @@ function displayAllContacts(contacts) {
       `Name: ${currentContact.name}, Phone: ${currentContact.phone}, Email: ${currentContact.email}`,
     );
   }
-
   console.log("End of contacts.");
 }
 console.log("Ex.1: ");
@@ -112,7 +121,7 @@ console.log("Ex.5: ");
 displayAllContacts([{ street: "some street", postalCode: "12345" }]);
 console.log("Ex.6: ");
 displayAllContacts(["john", "1312312", "emaail@com"]);
-console.log("STEP 1 is completed ");
+console.log("========== STEP 2 is completed ==========");
 // displayAllContacts();
 // displayAllContacts([{street:"some street", postalCode: '12345'}]);
 // displayAllContacts(['john', '1312312', 'emaail@com']);
@@ -127,33 +136,56 @@ Function: addContact(name, phone, email)
   exists before adding. If found, logs a warning and returns.
 - Logs "Contact added successfully." if everything is good.
 */
-function findContact(name, contactList) {
-  for (let i = 0; i < contactList.length; i++) {
-    if (contactList[i].name.toLowerCase() === name.toLowerCase()) {
-      return contactList[i];
-    }
+/* === I think, we need to look phone in this case because name is not unique but we can use phone like a ID in this array === 
+
+const findContactByPhone = (phone, contactList) => {
+  if (typeof phone !== "string" || !phone.length) return;
+  if (!Array.isArray(contactList)) return;
+    return contactList.find(contact => contact.phone === phone);
   }
-  console.log("Contact is not found.");
-  return null;
-}
+const addContact = (name, phone, email, contactList) => {
+  const existingContact = findContactByPhone(phone, contactList);
+  if(existingContact){
+  console.log(`[WARNING] The phone number ${phone} is already registered under the name '${existingContact.name}'!`)
+  }
+  const newContact = { name, phone, email }; // {name: name, phone: phone, email: email};
+  contactList.push(newContact);
+  console.log("[SUCCESS] Succesfully added a new contact.");
+  }
 
-function addContact(name, phone, email, contactList) {
-  console.log("Adding a new contact.");
 
-  const maybeExistingContact = findContact(name, contactList);
-  if (maybeExistingContact) {
-    console.warn("This guy is already here.");
+*/
+const findContact = (name, contactList) => {
+  if (typeof name !== "string" || !name.length) return;
+  if (!Array.isArray(contactList)) return;
+  return contactList.find(
+    (contact) => contact.name.toLowerCase() === name.toLowerCase(),
+  );
+};
+const addContact = (name, phone, email, contactList) => {
+  if (!Array.isArray(contactList)) {
+    console.error("Error: contactList must be an array.");
+    return;
+  }
+  if (typeof name !== "string" || !name.trim().length) {
+    console.error("Error: name must be a non-empty string.");
     return;
   }
 
+  const existingContact = findContact(name, contactList);
+  if (existingContact) {
+    console.warn("[WARNING] This guy is already here.");
+    return;
+  }
   const newContact = { name, phone, email }; // {name: name, phone: phone, email: email};
   contactList.push(newContact);
-  console.log("Succesfully added a new contact.");
-}
+  console.log("[SUCCESS] Successfully added a new contact.");
+};
 
 addContact("Mary", "001236672", "vanderboom@gmail.com", generalContacts);
+addContact("Ferhat", "001236672", "vanderboom@gmail.com", generalContacts);
 displayAllContacts(generalContacts);
-
+console.log("========== STEP 3 is completed ==========");
 /*
 -----------------------------------------------------------
   STEP 4: View a Contact by Name
@@ -164,23 +196,29 @@ Function: viewContact(name)
 - Otherwise, logs: "No contact found with the name: <name>"
 */
 
-function viewContact(name, contactList) {
+const viewContact = (name, contactList) => {
   console.log(`Looking for the name: ${name}...`);
-
-  const maybeExistingContact = findContact(name, contactList);
-
-  if (maybeExistingContact) {
-    console.log(
-      `Name: ${maybeExistingContact.name}, Phone: ${maybeExistingContact.phone}, Email: ${maybeExistingContact.email}`,
-    );
+  if (!Array.isArray(contactList)) {
+    console.error("Error: contactList must be an array.");
     return;
   }
 
-  console.log(`No contact found with the name: ${name}`);
-}
+  const existingContact = findContact(name, contactList);
+  if (existingContact) {
+    console.log(
+      `Name: ${existingContact.name}, Phone: ${existingContact.phone}, Email: ${existingContact.email}`,
+    );
+    return;
+  } else {
+    console.log(`No contact found with the name: ${name}`);
+    return;
+  }
+};
 viewContact("Mary", generalContacts);
 viewContact("mary", generalContacts);
-
+viewContact("Ferhat", generalContacts);
+viewContact("berk", generalContacts);
+console.log("========== STEP 4 is completed ==========");
 /*
 -----------------------------------------------------------
   STEP 5: Update a Contact
@@ -190,7 +228,32 @@ Function: updateContact(name, newPhone, newEmail)
 - Logs "Contact updated successfully." if found.
 - Otherwise, logs: "No contact found with the name: <name>"
 */
+const updateContact = (name, newPhone, newEmail, contactList) => {
+  if (
+    typeof name !== "string" ||
+    typeof newPhone !== "string" ||
+    typeof newEmail !== "string"
+  ) {
+    console.log("Please provide a string value.");
+    return;
+  }
+  if (!Array.isArray(contactList)) {
+    console.log("Please provide a valid array.");
+    return;
+  }
+  const existingContact = findContact(name, contactList);
 
+  if (existingContact) {
+    existingContact.phone = newPhone;
+    existingContact.email = newEmail;
+    console.log(`Information about ${name} updated successfully.`);
+  } else {
+    console.log("No contact found with the name:", name);
+  }
+};
+updateContact("Ferhat", "435211234", "test1@mail.com", generalContacts);
+updateContact("John", "91234432", "test2@mail.com", workContacts);
+console.log("========== STEP 5 is completed ==========");
 /*
 -----------------------------------------------------------
   STEP 6: Remove a Contact
@@ -202,7 +265,20 @@ Function: removeContact(name)
 - Logs "Contact removed successfully." if found.
 - Otherwise, logs: "No contact found with the name: <name>"
 */
-
+const removeContact = (name, contactList) => {
+  for (let i = 0; i < contactList.length; i++) {
+    if (contactList[i].name.toLowerCase() === name.toLowerCase()) {
+      contactList.splice(i, 1);
+      console.log(`Contact '${name}' removed successfully.`);
+      return;
+    }
+  }
+  console.log(`No contact found with the name: ${name}`);
+};
+removeContact("berk", generalContacts);
+/*removeContact("mary", generalContacts);*/
+displayAllContacts(generalContacts);
+console.log("========== STEP 6 is completed ==========");
 /*
 -----------------------------------------------------------
   STEP 7: Testing Our Functions
@@ -210,6 +286,8 @@ Function: removeContact(name)
 Below are some sample function calls to demonstrate the 
 Contact Book in action.
 */
+
+/**I tested the functions below at every step.**/
 
 /*
 -----------------------------------------------------------
@@ -223,3 +301,47 @@ Contact Book in action.
 3. Search by multiple fields:
    - e.g., find a contact by phone number or email.
 */
+
+const sortByName = (contactList) => {
+  if (!Array.isArray(contactList)) {
+    console.log("Please provide a valid array.");
+  }
+  if (contactList.length <= 0) {
+    console.log("Please provide a non-empty array.");
+  }
+  let newList = [...contactList];
+
+  for (let i = 0; i < newList.length; i++) {
+    for (let j = 0; j < newList.length - 1 - i; j++) {
+      const name1 = newList[j].name.toLowerCase();
+      const name2 = newList[j + 1].name.toLowerCase();
+
+      if (name1 > name2) {
+        const replaceName = newList[j];
+        newList[j] = newList[j + 1];
+        newList[j + 1] = replaceName;
+      }
+    }
+  }
+  console.log(newList);
+};
+
+sortByName(generalContacts);
+
+const searchByField = (phone, contactList) => {
+  if (!Array.isArray(contactList)) {
+    console.log("Please provide a valid array.");
+  }
+  if (typeof phone !== "string") {
+    console.log("Please provide a string value.");
+  }
+  let result = [];
+  for (let i = 0; i < contactList.length; i++) {
+    if (contactList[i].phone === phone) {
+      result.push(contactList[i]);
+    }
+  }
+  console.log(result);
+};
+
+searchByField("00123345456", generalContacts);
