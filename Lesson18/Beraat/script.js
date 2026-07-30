@@ -29,78 +29,23 @@ Node.js or a browser console.
 */
 
 class ShoppingCart {
-  // Private values
   #items;
-  #stock;
   #discount;
+  #activeDiscountRate;
   // Instantiation method - constructor
   constructor() {
     this.#items = [];
-    this.#stock = [];
-    this.#discount = { SAVE10: 10, SAVE15: 15, SAVE20: 20 };
+    this.#discount = {
+      SAVE10: 10,
+      SAVE15: 15,
+      SAVE20: 20,
+    };
+
+    this.#activeDiscountRate = 0;
   }
 
   // Methods
-  createItem(name, price, quantity) {
-    console.log("------- Adding new item to the stock. -------");
-    if (!name) {
-      console.log(`Provide an item name to add.`);
-      return;
-    }
-    if (quantity <= 0) {
-      console.log(`Quantity must be bigger than 0`);
-      return;
-    }
-    if (price.amount === undefined) {
-      console.log(`Provide an item price.`);
-      return;
-    }
-    if (typeof price.amount !== "number") {
-      console.log("Price amount must be a number.");
-      return;
-    }
-    if (price.amount <= 0) {
-      console.log(`Price must be bigger than 0`);
-      return;
-    }
 
-    let stockItem;
-    for (const item of this.#stock) {
-      if (item.name.toLowerCase() === name.toLowerCase()) {
-        stockItem = item;
-        break;
-      }
-    }
-    if (stockItem) {
-      stockItem.quantity += quantity;
-      stockItem.price.amount = price.amount;
-      console.log(
-        `İtem ${name} stock is updated, new quantity: ${stockItem.quantity}`,
-      );
-    } else {
-      this.#stock.push({
-        name,
-        price,
-        quantity,
-        discount: 0,
-      });
-      console.log(`İtem ${name} is added to stock.`);
-    }
-    console.log("--------------");
-  }
-  viewStock() {
-    console.log("------- Viewing the stock -------");
-    if (this.#stock.length > 0) {
-      for (const item of this.#stock) {
-        console.log(
-          `Current item - name: ${item.name}, price: ${item.price.amount} ${item.price.currency}, quantity: ${item.quantity}`,
-        );
-      }
-    } else {
-      console.log(`The stock is empty.`);
-    }
-    console.log("--------------");
-  }
   viewCart() {
     console.log("------- Viewing the cart -------");
     if (this.#items.length > 0) {
@@ -140,113 +85,86 @@ class ShoppingCart {
     this.#items.push({ name, price, quantity });
   }*/
 
-  addItem(name, quantity) {
-    console.log("------- Adding item to the cart -------");
+  addItem(name, price, quantity) {
+    console.log("------- Adding item -------");
 
     if (!name) {
-      console.log(`Provide an item name to add.`);
+      console.log("Provide an item name.");
       return;
     }
+
+    if (!price || typeof price.amount !== "number" || price.amount <= 0) {
+      console.log("Provide a valid price.");
+      return;
+    }
+
     if (quantity <= 0) {
-      console.log(`Quantity must be bigger than 0`);
+      console.log("Quantity must be greater than 0.");
       return;
     }
 
-    let stockItem;
+    const existingItem = this.#items.find(
+      (item) => item.name.toLowerCase() === name.toLowerCase(),
+    );
 
-    for (const item of this.#stock) {
-      if (item.name.toLowerCase() === name.toLowerCase()) {
-        stockItem = item;
-        break;
-      }
+    if (existingItem) {
+      existingItem.quantity += quantity;
+      console.log(`${name} quantity updated.`);
+    } else {
+      this.#items.push({
+        name,
+        price,
+        quantity,
+      });
+
+      console.log(`${name} added to cart.`);
     }
 
-    if (!stockItem) {
-      console.log(`Item ${name} is not on our selling list.`);
-      return;
-    }
-
-    if (stockItem.quantity < quantity) {
-      console.log(
-        `Item ${name} is out of stock. Available stock is ${stockItem.quantity}`,
-      );
-      return;
-    }
-
-    for (const item of this.#items) {
-      if (item.name.toLowerCase() === name.toLowerCase()) {
-        item.quantity += quantity;
-        stockItem.quantity -= quantity;
-        console.log(`Item ${name} is increased by ${quantity}.`);
-        this.viewCart();
-        this.getTotal();
-        return;
-      }
-    }
-
-    this.#items.push({
-      name: stockItem.name,
-      price: stockItem.price,
-      quantity: quantity,
-      discount: 0,
-    });
-
-    stockItem.quantity -= quantity;
-
-    console.log(`Added ${quantity} ${name}(s) to the shopping cart.`);
-
-    this.viewCart();
     this.getTotal();
-
-    console.log("--------------");
   }
-
-  removeItem(name, quantity) {
+  removeItem(name, quantity = Infinity) {
     console.log("------- Removing item from the cart -------");
-    let cartItem;
-    let stockItem;
 
-    for (const item of this.#items) {
-      if (item.name.toLowerCase() === name.toLowerCase()) {
-        cartItem = item;
-        break;
-      }
+    if (!name) {
+      console.log("Provide an item name.");
+      return;
     }
+
+    const cartItem = this.#items.find(
+      (item) => item.name.toLowerCase() === name.toLowerCase(),
+    );
 
     if (!cartItem) {
-      console.log(`Item ${name} is not found in the cart`);
+      console.log(`Item "${name}" is not found in the cart.`);
       return;
     }
 
-    for (const item of this.#stock) {
-      if (item.name.toLowerCase() === name.toLowerCase()) {
-        stockItem = item;
-        break;
-      }
+    if (quantity <= 0) {
+      console.log("Quantity must be greater than 0.");
+      return;
     }
 
-    if (cartItem.quantity <= quantity || quantity === undefined) {
-      console.log(`All ${name}(s) removed from the cart.`);
-      stockItem.quantity += cartItem.quantity;
+    if (quantity >= cartItem.quantity) {
       this.#items = this.#items.filter(
         (item) => item.name.toLowerCase() !== name.toLowerCase(),
       );
-      this.viewCart();
-      this.getTotal();
-      return;
-    }
-    cartItem.quantity -= quantity;
-    stockItem.quantity += quantity;
 
-    console.log(`${quantity} ${cartItem.name} item removed.`);
+      console.log(`All ${name}(s) removed from the cart.`);
+    } else {
+      cartItem.quantity -= quantity;
+
+      console.log(`${quantity} ${name}(s) removed from the cart.`);
+    }
+
     this.viewCart();
     this.getTotal();
+
     console.log("--------------");
   }
 
   getTotal() {
     let total = 0;
-    let currentItem;
+    let currency = "";
 
     if (this.#items.length === 0) {
       console.log("Total: 0.00");
@@ -254,38 +172,29 @@ class ShoppingCart {
     }
 
     for (const item of this.#items) {
-      total += item.price.amount * (1 - item.discount / 100) * item.quantity;
-      currentItem = item;
+      total += item.price.amount * item.quantity;
+      currency = item.price.currency;
     }
 
-    console.log(`Total: ${total.toFixed(2)} ${currentItem.price.currency}`);
+    total = total * (1 - this.#activeDiscountRate / 100);
+
+    console.log(`Total: ${total.toFixed(2)} ${currency}`);
   }
-  applyDiscount(discountCode, name) {
-    console.log("------- Applying discount to the item  -------");
+  applyDiscount(discountCode) {
+    console.log("------- Applying discount -------");
 
-    let discountItem;
-    for (const item of this.#items) {
-      if (item.name.toLowerCase() === name.toLowerCase()) {
-        discountItem = item;
-        break;
-      }
-    }
-
-    if (!discountItem) {
-      console.log(`Item ${name} is not found in the cart`);
-      return;
-    }
     const discountAmount = this.#discount[discountCode];
 
     if (discountAmount === undefined) {
-      console.log(
-        `${discountCode} is not an discount code. Please provide a valid discount code.`,
-      );
+      console.log(`${discountCode} is not a valid discount code.`);
       return;
     }
-    discountItem.discount = discountAmount;
-    console.log(`${discountCode} is applied to ${discountItem.name}. `);
+
+    this.#activeDiscountRate = discountAmount;
+
+    console.log(`${discountCode} applied to the cart.`);
     console.log("--------------");
+
     this.getTotal();
   }
 }
@@ -293,33 +202,26 @@ class ShoppingCart {
 const cart = new ShoppingCart();
 cart.viewCart();
 
-cart.createItem("laptop", { amount: 1000.5, currency: "EUR" }, 1);
-cart.createItem("phone", { amount: 500, currency: "EUR" }, 2);
-cart.createItem("desktop", { amount: 800, currency: "EUR" }, 5);
-cart.createItem("laptop", { amount: 1000.5, currency: "EUR" }, 2);
-cart.createItem("laptop", { amount: 1000.5, currency: "EUR" }, 2);
-
-cart.viewStock();
+cart.addItem("laptop", { amount: 1000.5, currency: "EUR" }, 1);
+cart.addItem("phone", { amount: 500, currency: "EUR" }, 2);
+cart.addItem("desktop", { amount: 800, currency: "EUR" }, 5);
+cart.addItem("laptop", { amount: 1000.5, currency: "EUR" }, 2);
+cart.addItem("laptop", { amount: 1000.5, currency: "EUR" }, 2);
 
 cart.getTotal();
 
-cart.addItem("laptop", 1);
-cart.addItem("phone", 2);
-cart.addItem("laptop", 2);
 cart.viewCart();
 
 cart.removeItem("apples", 1);
 cart.removeItem("laptop", 1);
 
-cart.applyDiscount("SAVE20", "laptop");
-cart.applyDiscount("SAVE10", "laptop");
-cart.viewStock();
+cart.applyDiscount("SAVE20");
+cart.applyDiscount("SAVE10");
 
 //after updating the price update feature
 
-cart.createItem("laptop", { amount: 1200, currency: "EUR" }, 2);
-cart.createItem("phone", { amount: 700, currency: "EUR" }, 2);
-cart.viewStock();
+cart.addItem("laptop", { amount: 1200, currency: "EUR" }, 2);
+cart.addItem("phone", { amount: 700, currency: "EUR" }, 2);
 
 /*
 -----------------------------------------------------------
