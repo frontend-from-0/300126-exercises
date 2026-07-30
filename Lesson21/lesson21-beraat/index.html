@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout Form</title>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <form id="checkoutForm" novalidate>
+        <h1>Checkout Form</h1>
+        <p class="subtitle">Please fill in all required information.</p>
+
+        <div class="input-group">
+          <label class="form-label" for="email">Email Address</label>
+
+          <input
+            class="form-input"
+            id="email"
+            type="email"
+            placeholder="email@example.com"
+            aria-describedby="emailError"
+          />
+
+          <p id="emailError" class="input-error hidden" aria-live="polite"></p>
+        </div>
+
+        <div class="input-group">
+          <label class="form-label" for="phone">Phone Number</label>
+
+          <input
+            class="form-input"
+            id="phone"
+            type="tel"
+            placeholder="+90 555 123 45 67"
+            aria-describedby="phoneError"
+          />
+
+          <p id="phoneError" class="input-error hidden" aria-live="polite"></p>
+        </div>
+
+        <div class="input-group">
+          <label class="form-label" for="firstname">First Name</label>
+
+          <input
+            class="form-input"
+            id="firstname"
+            type="text"
+            placeholder="John"
+            aria-describedby="firstNameError"
+          />
+
+          <p
+            id="firstNameError"
+            class="input-error hidden"
+            aria-live="polite"
+          ></p>
+        </div>
+
+        <div class="input-group">
+          <label class="form-label" for="lastname">Last Name</label>
+
+          <input
+            class="form-input"
+            id="lastname"
+            type="text"
+            placeholder="Smith"
+            aria-describedby="lastNameError"
+          />
+
+          <p
+            id="lastNameError"
+            class="input-error hidden"
+            aria-live="polite"
+          ></p>
+        </div>
+
+        <div class="input-group">
+          <label class="form-label" for="cardnumber">Card Number</label>
+
+          <input
+            class="form-input"
+            id="cardnumber"
+            type="text"
+            placeholder="5123 4500 0000 0008"
+            aria-describedby="cardError"
+          />
+
+          <p id="cardError" class="input-error hidden" aria-live="polite"></p>
+        </div>
+
+        <div class="input-group">
+          <label class="form-label" for="expDate">Expiration Date</label>
+
+          <input
+            class="form-input"
+            id="expDate"
+            type="text"
+            placeholder="MM/YY"
+            aria-describedby="expDateError"
+          />
+
+          <p
+            id="expDateError"
+            class="input-error hidden"
+            aria-live="polite"
+          ></p>
+        </div>
+
+        <div class="input-group">
+          <label class="form-label" for="cvv">CVV</label>
+
+          <input
+            class="form-input"
+            id="cvv"
+            type="text"
+            placeholder="123"
+            aria-describedby="cvvError"
+          />
+
+          <p id="cvvError" class="input-error hidden" aria-live="polite"></p>
+        </div>
+
+        <div class="button-group">
+          <button type="submit" class="btn-primary">Place Order</button>
+
+          <button type="button" id="clearBtn" class="btn-secondary">
+            Clear Form
+          </button>
+        </div>
+      </form>
+
+      <section id="success" class="success-card hidden" aria-live="polite">
+        <h2 class="success-head">Order Submitted!</h2>
+
+        <p>Thank you for your purchase.</p>
+
+        <p class="success-text">
+          Your order has been placed successfully. A confirmation email will be
+          sent shortly.
+        </p>
+
+        <button id="returnBtn" class="btn-primary success-btn" type="button">
+          Return to Form
+        </button>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
