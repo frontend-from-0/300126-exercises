@@ -62,7 +62,7 @@ form.addEventListener("submit", function (event) {
   console.log(event);
   formContent.classList.add("hidden");
   confirmation.classList.remove("hidden");
-  confirmation.innerHTML = `<h1>Thank you!</h1> <p>Your appointment is confirmed for ${data.date} at ${data.time}</p>`;
+  confirmation.textContent = `<h1>Thank you!</h1> <p>Your appointment is confirmed for ${data.date} at ${data.time}</p>`;
 });
 
 /* Login page script process */
@@ -90,9 +90,9 @@ loginForm.addEventListener("submit", function (event) {
   const emailInput = document.getElementById("email").value.trim();
 
   const isNameValid = /^[a-zA-ZçÇğĞıİöÖşŞüÜ\s]+$/.test(usernameInput);
-  const isEmailValid = emailInput.includes("@");
 
-  if (displayUsername && displayEmail && isNameValid && isEmailValid) {
+
+  if (displayUsername && displayEmail && isNameValid) {
     displayUsername.textContent = usernameInput;
     displayEmail.textContent = emailInput;
     if (loginPage) {
@@ -106,8 +106,6 @@ loginForm.addEventListener("submit", function (event) {
       alert(
         "Please don't write numbe or special characters while writing your username",
       );
-    } else if (!isEmailValid) {
-      alert("Please write valid mail adress");
     } else {
       alert("A system error occurred.Please refresh the page.");
     }

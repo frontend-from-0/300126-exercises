@@ -19,41 +19,46 @@
           <h2 id="timeslots-heading">Available Time Slots</h2>
           <fieldset class="timeslots" aria-labelledby="timeslots-heading">
             <legend class="hidden">Choose a time slot</legend>
-            <button
-              class="slot"
-              type="button"
-              aria-label="Select 09:00 time slot"
-            >
-              09:00
-            </button>
-            <button
-              class="slot"
-              type="button"
-              aria-label="Select 10:30 time slot"
-            >
-              10:30
-            </button>
-            <button
-              class="slot"
-              type="button"
-              aria-label="Select 13:00 time slot"
-            >
-              13:00
-            </button>
-            <button
-              class="slot"
-              type="button"
-              aria-label="Select 14:30 time slot"
-            >
-              14:30
-            </button>
-            <button
-              class="slot"
-              type="button"
-              aria-label="Select 16:00 time slot"
-            >
-              16:00
-            </button>
+
+            <!-- 09:00 -->
+            <input
+              type="radio"
+              id="slot-0900"
+              name="timeslot"
+              value="09:00"
+              class="slot-input"
+            />
+            <label for="slot-0900" class="slot">09:00</label>
+
+            <!-- 10:30 -->
+            <input
+              type="radio"
+              id="slot-1030"
+              name="timeslot"
+              value="10:30"
+              class="slot-input"
+            />
+            <label for="slot-1030" class="slot">10:30</label>
+
+            <!-- 13:00 -->
+            <input
+              type="radio"
+              id="slot-1300"
+              name="timeslot"
+              value="13:00"
+              class="slot-input"
+            />
+            <label for="slot-1300" class="slot">13:00</label>
+
+            <!-- 14:30 -->
+            <input
+              type="radio"
+              id="slot-1430"
+              name="timeslot"
+              value="14:30"
+              class="slot-input"
+            />
+            <label for="slot-1430" class="slot">14:30</label>
           </fieldset>
         </section>
 
@@ -81,22 +86,24 @@
 
         <form action="" id="login-form">
           <div class="input-group">
-            <label for="username">User Name</label>
+            <label for="username" class="input-label">User Name</label>
             <input
               type="text"
               id="username"
               required
               placeholder="Name and Last Name"
+              class="input-form"
             />
           </div>
 
           <div class="input-group">
-            <label for="email">Email</label>
+            <label for="email" class="input-label">Email</label>
             <input
-              type="text"
+              type="email"
               id="email"
               required
               placeholder="forexample@mail.com"
+              class="input-form"
             />
           </div>
           <button type="submit" class="submit-btn">Save</button>
