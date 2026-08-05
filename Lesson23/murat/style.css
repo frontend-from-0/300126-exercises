@@ -1,0 +1,121 @@
+body {
+  background-color: rgb(225, 213, 213);
+  margin: 60px 40px;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 300px;
+  border: 2px solid brown;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: rgb(252, 245, 245);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  background-color: rgb(255, 255, 70);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.element-title {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: brown;
+  height: 70px; /*I did because I wanted the paragraph and the paragraphs to be kept aligned */
+  text-align: center;
+}
+
+.element-body {
+  font-size: 16px;
+  color: rgb(154, 152, 152);
+  text-align: justify;
+}
+
+
+/*Scroll Button */
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  opacity: 0;
+  pointer-events: none;
+
+  width: 45px;
+  height: 45px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition:
+    opacity 0.3s ease,
+    transform 0.2s ease;
+}
+
+#scrollTopBtn.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#scrollTopBtn:hover {
+  background-color: red;
+  transform: scale(1.1);
+}
+
+
+/* Night Mode */
+
+#themeToggleBtn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  background-color: #333;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+body.dark-theme {
+  background-color: black;
+}
+
+/* Search Input */
+
+#searchInput {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 20px;
+  margin: 0 auto 30px auto; 
+  display: block;
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+#searchInput:focus {
+  border-color: red; 
+}
+
+.card.hide {
+  display: none;
+}
