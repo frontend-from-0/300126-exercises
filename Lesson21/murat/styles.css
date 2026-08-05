@@ -29,9 +29,6 @@ main {
   max-width: 450px;
 }
 
-form {
-  max-width: 448px;
-}
 
 .input-group {
   display: flex;
@@ -40,7 +37,7 @@ form {
   margin: 24px 0;
 }
 
-input {
+.form-input {
   background: #ffffff;
   border: 2px solid #336653;
   border-radius: 8px;
@@ -71,7 +68,7 @@ input::placeholder {
 }
 
 .hidden {
-  display: none !important;
+  display: none;
 }
 
 #success {

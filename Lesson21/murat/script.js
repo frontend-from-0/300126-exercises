@@ -9,7 +9,7 @@ const cvvPattern = /^[0-9]{3}$/;
 
 //Variables
 const emailInput = document.getElementById("email");
-const errorEmail = document.getElementById("emailError");
+const emailError = document.getElementById("emailError");
 const form = document.getElementById("checkoutForm");
 const phoneInput = document.getElementById("phone");
 const phoneError = document.getElementById("phoneError");
@@ -23,14 +23,14 @@ const expDate = document.getElementById("expDate");
 const dateError = document.getElementById("dateError");
 const cvv = document.getElementById("cvv");
 const cvvError = document.getElementById("cvvError");
-const successInput = document.getElementById("success");
+const successMessage = document.getElementById("success");
 
 let formValid = true;
 
 function validateEmail(value) {
   const trimmedValue = value.trim();
   if (!emailPattern.test(trimmedValue)) {
-    errorEmail.textContent = "Please provide a valid mail address.";
+    emailError.textContent = "Please provide a valid mail address.";
     emailError.classList.remove("hidden");
     formValid = false;
   } else {
@@ -65,6 +65,8 @@ function validateName(value, errorElement) {
   }
 }
 
+console.log(lastNameError);
+
 function validateCard(value) {
   const trimmedValue = value.trim();
   const cleanValue = trimmedValue.replace(/\s/g, "");
@@ -79,11 +81,10 @@ function validateCard(value) {
     formValid = false;
   } else {
     cardError.classList.add("hidden");
-    formValid = true;
   }
 }
 
-function validateData(value) {
+function validateExpDate(value) {
   const trimmedValue = value.trim();
   if (trimmedValue === "") {
     dateError.textContent = "This value is required.";
@@ -100,12 +101,12 @@ function validateData(value) {
 }
 
 function validateCvv(value) {
-  const trimedValue = value.trim();
-  if (trimedValue === "") {
+  const trimmedValue = value.trim();
+  if (trimmedValue === "") {
     cvvError.textContent = "This value is required.";
     cvvError.classList.remove("hidden");
     formValid = false;
-  } else if (!cvvPattern.test(trimedValue)) {
+  } else if (!cvvPattern.test(trimmedValue)) {
     cvvError.textContent = "Please enter your 3-digit security code.";
     cvvError.classList.remove("hidden");
     formValid = false;
@@ -119,12 +120,12 @@ phoneInput.addEventListener("blur", () => validatePhone(phoneInput.value));
 firstName.addEventListener("blur", () =>
   validateName(firstName.value, firstNameError),
 );
-lastName.addEventListener("blur", () =>
+lastName.addEventListener("blur", () => 
   validateName(lastName.value, lastNameError),
 );
 
 cardnumber.addEventListener("blur", () => validateCard(cardnumber.value));
-expDate.addEventListener("blur", () => validateData(expDate.value));
+expDate.addEventListener("blur", () => validateExpDate(expDate.value));
 expDate.addEventListener("input", (e) => {
   let value = e.target.value.replace(/\D/g, "");
   if (value.length > 2) {
@@ -139,17 +140,18 @@ cvv.addEventListener("blur", () => validateCvv(cvv.value));
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
+  formValid = true;
 
   validateEmail(emailInput.value);
   validatePhone(phoneInput.value);
   validateName(firstName.value, firstNameError);
   validateName(lastName.value, lastNameError);
   validateCard(cardnumber.value);
-  validateData(expDate.value);
+  validateExpDate(expDate.value);
   validateCvv(cvv.value);
 
   if (formValid) {
-    successInput.classList.remove("hidden");
+    successMessage.classList.remove("hidden");
     form.classList.add("hidden");
   }
 
