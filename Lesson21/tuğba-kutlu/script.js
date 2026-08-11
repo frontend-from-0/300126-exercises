@@ -31,7 +31,7 @@ function validateEmail(value) {
   const trimmedValue = value.trim();
   if (!emailPattern.test(trimmedValue)) {
     errorEmail.textContent = "Please provide a valid mail address.";
-    emailError.classList.remove("hidden");
+    errorEmail.classList.remove("hidden");
     formValid = false;
   } else {
     emailError.classList.add("hidden");
