@@ -100,7 +100,7 @@ function validateExpDate(value) {
   let trimmedValue = value.trim().replace(/\D/g, "");
   expDate.value = trimmedValue;
   if (trimmedValue.length < 1) {
-    expDateError.textContent = "This provide a valid date.";
+    expDateError.textContent = "Please provide a valid date.";
     expDateError.classList.remove("hidden");
     formValid = false;
   }
