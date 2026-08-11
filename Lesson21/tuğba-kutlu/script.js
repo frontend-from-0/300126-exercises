@@ -68,7 +68,7 @@ function validateName(value, errorElement) {
 function validateCard(value) {
   const trimmedValue = value.trim().replace(/\s/g, "");
   if (trimmedValue.length < 1) {
-    cardError.textContent = "This value is required";
+    cardError.textContent = "This field is required";
     cardError.classList.remove("hidden");
     formValid = false;
   } else if (!cardNumberPattern.test(trimmedValue)) {
