@@ -52,7 +52,7 @@ function validatePhone(value) {
 function validateName(value, errorElement) {
   const trimmedValue = value.trim();
   if (trimmedValue.length < 1) {
-    errorElement.textContent = "The value is required";
+    errorElement.textContent = "This field is required";
     errorElement.classList.remove("hidden");
     formValid = false;
   } else if (!namePattern.test(trimmedValue)) {
