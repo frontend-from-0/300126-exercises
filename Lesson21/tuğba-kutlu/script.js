@@ -130,9 +130,21 @@ function validateExpDate(value) {
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
-  form.classList.add("hidden");
-  successMessage.classList.remove("hidden");
-  successMessage.classList.add("show");
+  formValid = true;
+  validateEmail(emailInput.value);
+  validatePhone(phoneInput.value);
+  validateName(firstName.value, firstNameError);
+  validateName(lastName.value, lastNameError);
+  validateCard(cardnumber.value);
+  validateCvv(cardCvv.value);
+  validateExpDate(expDate.value);
+  if (formValid) {
+    form.classList.add("hidden");
+    successMessage.classList.remove("hidden");
+    successMessage.classList.add("show");
+  } else {
+    return;
+  }
 });
 
 emailInput.addEventListener("blur", () => validateEmail(emailInput.value));
