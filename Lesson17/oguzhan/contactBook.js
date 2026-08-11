@@ -67,11 +67,16 @@ function displayAllContacts(contacts) {
   }
 
   for (let i = 0; i < contacts.length; i++) {
-    // TODO: add check that current contact is an object (Optional: and has required properties -> Object.keys())
     const currentContact = contacts[i];
-    console.log(
-      `Name: ${currentContact.name}, Phone: ${currentContact.phone}, Email: ${currentContact.email}`,
-    );
+
+    // Skip primitives (string, number, etc.) — only log real objects
+    if (typeof currentContact === 'object' && currentContact !== null) {
+      console.log(
+        `Name: ${currentContact.name}, Phone: ${currentContact.phone}, Email: ${currentContact.email}`,
+      );
+    } else {
+      console.log(`Invalid contact at index ${i}:`, currentContact);
+    }
   }
   console.log('End of contacts.');
 }
@@ -160,8 +165,8 @@ Function: updateContact(name, newPhone, newEmail)
 - Logs "Contact updated successfully." if found.
 - Otherwise, logs: "No contact found with the name: <name>"
 */
-function updateContact(name, newPhone, newEmail) {
-    const index = contacts.findIndex(contact =>
+function updateContact(name, newPhone, newEmail, contactList) {
+    const index = contactList.findIndex(contact =>
         contact.name.includes(name)
     );
 
@@ -170,8 +175,8 @@ function updateContact(name, newPhone, newEmail) {
         return;
     }
 
-    contacts[index].phone = newPhone;
-    contacts[index].email = newEmail;
+    contactList[index].phone = newPhone;
+    contactList[index].email = newEmail;
     console.log("Contact updated successfully.");
 }
 
@@ -187,8 +192,8 @@ Function: removeContact(name)
 - Otherwise, logs: "No contact found with the name: <name>"
 */
 
-function removeContact(name) {
-    const index = contacts.findIndex(contact =>
+function removeContact(name, contactList) {
+    const index = contactList.findIndex(contact =>
         contact.name.includes(name)
     );
 
@@ -197,21 +202,21 @@ function removeContact(name) {
         return;
     }
 
-    contacts.splice(index, 1);
+    contactList.splice(index, 1);
     console.log("Contact removed successfully.");
 }
 
 //
 
-function sortContacts() {
-    contacts.sort((a, b) => a.name.localeCompare(b.name));
+function sortContacts(contactList) {
+    contactList.sort((a, b) => a.name.localeCompare(b.name));
     console.log("Contacts sorted alphabetically.");
 }
 
 //
 
-function searchContact(field, value) {
-    const matches = contacts.filter(contact =>
+function searchContact(field, value, contactList) {
+    const matches = contactList.filter(contact =>
         String(contact[field]).includes(value)
     );
 
@@ -233,33 +238,33 @@ Below are some sample function calls to demonstrate the
 Contact Book in action.
 */
 console.log("--- STEP 2: Display All Contacts ---");
-displayAllContacts();
+displayAllContacts(generalContacts);
 
 console.log("\n--- STEP 3: Add Contact ---");
-addContact("David", "111-222-3333", "david@example.com");
-addContact("Alice", "000-000-0000", "duplicate@example.com");
+addContact("David", "111-222-3333", "david@example.com", generalContacts);
+addContact("Alice", "000-000-0000", "duplicate@example.com", generalContacts);
 
 console.log("\n--- STEP 4: View Contact (partial name: 'li') ---");
-viewContact("li");
+viewContact("li", generalContacts);
 
 console.log("\n--- STEP 5: Update Contact ---");
-updateContact("Bob", "999-888-7777", "bob.new@example.com");
+updateContact("Bob", "999-888-7777", "bob.new@example.com", generalContacts);
 
 console.log("\n--- ENHANCEMENT 2: Sort Contacts ---");
-sortContacts();
-displayAllContacts();
+sortContacts(generalContacts);
+displayAllContacts(generalContacts);
 
 console.log("\n--- ENHANCEMENT 3: Search by Email ---");
-searchContact("email", "charlie");
+searchContact("email", "charlie", generalContacts);
 
 console.log("\n--- ENHANCEMENT 3: Search by Phone ---");
-searchContact("phone", "111");
+searchContact("phone", "111", generalContacts);
 
 console.log("\n--- STEP 6: Remove Contact ---");
-removeContact("David");
+removeContact("David", generalContacts);
 
 console.log("\n--- Final Contact List ---");
-displayAllContacts();
+displayAllContacts(generalContacts);
 /*
 -----------------------------------------------------------
   OPTIONAL ENHANCEMENTS:
