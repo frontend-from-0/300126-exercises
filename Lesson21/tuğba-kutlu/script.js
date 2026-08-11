@@ -160,13 +160,6 @@ cardnumber.addEventListener("blur", () => validateCard(cardnumber.value));
 cardCvv.addEventListener("blur", () => validateCvv(cardCvv.value));
 expDate.addEventListener("input", () => validateExpDate(expDate.value));
 
-validateEmail(emailInput.value);
-validatePhone(phoneInput.value);
-validateName(firstName.value, firstNameError);
-validateName(lastName.value, lastNameError);
-validateCard(cardnumber.value);
-validateCvv(cardCvv.value);
-validateExpDate(expDate.value);
 
 // Bu kısımı çalıştıramadığım için yukarıya yazdım ve sorunu tam olarak çözemedim.
 
