@@ -84,7 +84,7 @@ function validateCard(value) {
 function validateCvv(value) {
   const trimmedValue = value.trim();
   if (trimmedValue.length < 1) {
-    cvvError.textContent = "This value is required.";
+    cvvError.textContent = "This field is required.";
     cvvError.classList.remove("hidden");
     formValid = false;
   } else if (!cardCvvPattern.test(trimmedValue)) {
