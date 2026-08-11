@@ -163,11 +163,6 @@ form.addEventListener("submit", function (event) {
   return;
 });
 
-successBtn.addEventListener('click', ()=>{
-    form.classList.remove("hidden");
-    successBoard.classList.add("hidden");
-    successBoard.classList.remove("show");
-})
 /* 
 ** Form Validation **
 
