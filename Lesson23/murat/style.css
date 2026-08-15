@@ -1,6 +1,7 @@
 body {
   background-color: rgb(225, 213, 213);
   margin: 60px 40px;
+  transition: background-color 0.3s ease;
 }
 
 #container {
@@ -18,10 +19,12 @@ body {
   padding: 10px;
   background-color: rgb(252, 245, 245);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .card:hover {
-  background-color: rgb(255, 255, 70);
+  background-color: #FEF3C7;
+  border-color: #D97706;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   transform: translateY(-5px);
 }
@@ -30,74 +33,15 @@ body {
   font-size: 20px;
   text-transform: uppercase;
   color: brown;
-  height: 70px; /*I did because I wanted the paragraph and the paragraphs to be kept aligned */
+  height: 70px;
   text-align: center;
 }
 
 .element-body {
   font-size: 16px;
-  color: rgb(154, 152, 152);
+  color: #4B5563;
   text-align: justify;
 }
-
-
-/*Scroll Button */
-
-#scrollTopBtn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  opacity: 0;
-  pointer-events: none;
-
-  width: 45px;
-  height: 45px;
-  background-color: #333;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  font-size: 20px;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition:
-    opacity 0.3s ease,
-    transform 0.2s ease;
-}
-
-#scrollTopBtn.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-#scrollTopBtn:hover {
-  background-color: red;
-  transform: scale(1.1);
-}
-
-
-/* Night Mode */
-
-#themeToggleBtn {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  border: none;
-  background-color: #333;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-}
-
-body.dark-theme {
-  background-color: black;
-}
-
-/* Search Input */
 
 #searchInput {
   width: 100%;
@@ -113,9 +57,73 @@ body.dark-theme {
 }
 
 #searchInput:focus {
-  border-color: red; 
+  border-color: #DC2626;
+}
+
+.btn {
+  position: fixed;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  background-color: #333;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s ease, transform 0.2s ease, background-color 0.3s;
+}
+
+#themeToggleBtn {
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+#scrollTopBtn {
+  bottom: 30px;
+  right: 30px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#scrollTopBtn.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#scrollTopBtn:hover {
+  background-color: #DC2626;
+  transform: scale(1.1);
 }
 
 .card.hide {
   display: none;
+}
+
+body.dark-theme {
+  background-color: black;
+}
+
+body.dark-theme .card:hover {
+  background-color: #2A2A2A;
+  border-color: #F59E0B;
+}
+
+body.dark-theme .element-title {
+  color: #F97316;
+}
+
+body.dark-theme .element-body {
+  color: #2A2A2A;
+}
+
+body.dark-theme #searchInput {
+  background-color: #2D3748;
+  color: #FFFFFF;
+  border-color: #4A5568;
+}
+
+body.dark-theme #searchInput::placeholder {
+  color: #CBD5E1; 
 }
