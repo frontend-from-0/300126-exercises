@@ -38,6 +38,7 @@ fetchBtn.addEventListener('click', () => {
 function createUserCard(user) {
   const userCard = document.createElement('li');
   userCard.classList.add('card');
+  userCard.setAttribute('id', `user-${user.id}`);
 
   const title = document.createElement('h2');
   title.classList.add('card-title');
@@ -46,6 +47,9 @@ function createUserCard(user) {
   const cardBody = document.createElement('p');
   cardBody.classList.add('card-body');
   cardBody.textContent = 'Date of birth: ' + user.birthDate;
+
+  const cardActions = document.createElement('div');
+  cardActions.classList.add('card-actions');
 
   const updateBtn = document.createElement('a');
   updateBtn.textContent = 'Update User';
@@ -59,11 +63,13 @@ function createUserCard(user) {
     // deleteBtn.addEventListener('click', function () { deleteUser(user.id)});
     // deleteBtn.addEventListener('click', deleteUser);
 
+  cardActions.appendChild(updateBtn);
+  cardActions.appendChild(deleteBtn);
 
+  // Kartın içine ekle:
   userCard.appendChild(title);
   userCard.appendChild(cardBody);
-  userCard.appendChild(updateBtn);
-  userCard.appendChild(deleteBtn);
+  userCard.appendChild(cardActions);
 
   container.appendChild(userCard);
 }
@@ -80,6 +86,12 @@ function deleteUser(userId) {
         throw new Error(`Failed to delete user ${userId}`);
       }
       console.log(`User ${userId} deleted successfully.`);
+
+      const userCard = document.getElementById(`user-${userId}`);
+      if(userCard){
+        userCard.remove();
+      }
+
     })
     .catch((error) => {
       statusMessage.textContent = 'An error occured.' + error;

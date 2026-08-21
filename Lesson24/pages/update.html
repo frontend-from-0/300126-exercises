@@ -1,22 +1,37 @@
 <!doctype html>
 <html>
   <head>
-    <title>Users</title>
+    <title>Update User</title>
     <link rel="stylesheet" type="text/css" href="../styles.css" />
   </head>
   <body>
-    <main>
-      <form method="POST" id="updateUserForm">
-        <label for="firstName">First name</label>
-        <input type="text" id="firstName" name="firstName">
+    <main class="container">
+      <form id="updateUserForm" class="card">
+        <h1 style="margin-bottom: var(--space-md); text-align: left;">Update User</h1>
 
-        <button type="submit">Update user</button>
+        <div class="form-group">
+          <label for="firstName">First Name:</label>
+          <input type="text" name="firstName" id="firstName" class="input" required />
+        </div>
+
+        <div class="form-group">
+          <label for="lastName">Last Name:</label>
+          <input type="text" name="lastName" id="lastName" class="input" required />
+        </div>
+
+        <div class="card-actions">
+          <button type="submit" class="button button--success">
+            Update User
+          </button>
+          <a href="../index.html" class="button">Cancel</a>
+        </div>
       </form>
+
       <div>
         <p class="hidden" id="statusMessage"></p>
       </div>
     </main>
 
-    <script src="update.js"></script>
+    <script src="./update.js"></script>
   </body>
 </html>
