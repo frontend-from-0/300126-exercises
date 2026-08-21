@@ -1,4 +1,5 @@
 /*
+<<<<<<< HEAD
 1. Sum Array Elements with a For Loop
    - Define a function `sumArray(numbers)` that uses a for loop
      to sum all elements in an array of numbers.
@@ -96,12 +97,15 @@ function countOddEven(numbers) {
 }
 countOddEven([1, 2, 53, 6]);
 /*
+=======
+>>>>>>> main
 4. Sum of Numbers in a Range (While Loop)
    - Define a function `sumRange(start, end)` that uses a while loop
      to sum all integers from `start` to `end` (inclusive).
    - Log the final sum.
 */
 
+<<<<<<< HEAD
 /*
 5. Reverse an Array
    - Define a function `reverseArray(arr)` that reverses the elements
@@ -121,6 +125,8 @@ function reverseArray(arr) {
 }
 reverseArray([1, 2, 53, 6]);
 reverseArray(undefined);
+=======
+>>>>>>> main
 
 /*
 6. Filter Out Negative Numbers
@@ -129,6 +135,7 @@ reverseArray(undefined);
    - Log the new array.
 */
 
+<<<<<<< HEAD
 /*
 7. Double the Values (For-of Loop)
    - Define a function `doubleValues(numbers)` that uses a for-of loop
@@ -157,6 +164,8 @@ function doubleValues(numbers) {
 doubleValues([5, 4, 8, 30]);
 doubleValues(5, 4, 8, 30);
 
+=======
+>>>>>>> main
 
 /*
 8. Print Each Character of a String (For-of)
@@ -172,6 +181,7 @@ doubleValues(5, 4, 8, 30);
    - Example: {a: 10, b: 20, c: 5} -> 35
 */
 
+<<<<<<< HEAD
 /*
 10. Print Keys of an Object (For-in)
     - Define a function `printObjectKeys(obj)` that uses a for-in loop
@@ -197,6 +207,8 @@ printObjectKeys(null)
 printObjectKeys([1, 2, 3])
 
 
+=======
+>>>>>>> main
 
 /*
 11. Sum Array Using do-while Loop

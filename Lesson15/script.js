@@ -1,4 +1,5 @@
 /*
+<<<<<<< HEAD
 1. Check Password Length
    - Define a function `checkPassword(password)` that checks if `password` length
      is at least 8 characters.
@@ -145,6 +146,8 @@ checkFileExtension(`test.PDF`);
 checkFileExtension(`test.jpeg`);
 
 /*
+=======
+>>>>>>> main
 7. Compare Numbers (if-else)
    - Define a function `compareNumbers(a, b)` that:
      - Logs "a is bigger" if a > b
@@ -191,6 +194,7 @@ checkFileExtension(`test.jpeg`);
      7 -> "Sunday"
      - Log the matched day or "Invalid day" if out of range.
 */
+<<<<<<< HEAD
 function getDayOfWeek(num){
    const weekDayNumber = parseInt(num);
    switch(weekDayNumber){
@@ -219,6 +223,8 @@ console.log(getDayOfWeek(new Date().getDay()));
 
 console.log(new Date(), new Date().getDay(), new Date().getDate(), new Date().getMonth(), new Date().getFullYear());
 
+=======
+>>>>>>> main
 
 /*
 13. Repeat a String
@@ -366,4 +372,8 @@ console.log(new Date(), new Date().getDay(), new Date().getDate(), new Date().ge
      - "/" -> a / b
      - Otherwise -> "Invalid operator"
    - Log the result.
+<<<<<<< HEAD
 */
+=======
+*/
+>>>>>>> main

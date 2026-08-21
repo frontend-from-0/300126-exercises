@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appointment Booking</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container" id="form-content">
+      <header>
+        <h1>Book an Appointment</h1>
+      </header>
+
+      <form class="booking" id="booking-form">
+        <section class="calendar">
+          <label for="date">Select a date</label>
+          <input type="date" id="date" />
+          <h2 id="timeslots-heading">Available Time Slots</h2>
+          <fieldset class="timeslots" aria-labelledby="timeslots-heading">
+            <legend class="hidden">Choose a time slot</legend>
+
+            <label>
+              <input type="radio" name="timeslot" value="09:00" />
+              09:00
+            </label>
+
+            <label>
+              <input type="radio" name="timeslot" value="10:30" />
+              10:30
+            </label>
+
+            <label>
+              <input type="radio" name="timeslot" value="13:00" />
+              13:00
+            </label>
+
+            <label>
+              <input type="radio" name="timeslot" value="14:30" />
+              14:30
+            </label>
+
+            <label>
+              <input type="radio" name="timeslot" value="16:00" />
+              16:00
+            </label>
+          </fieldset>
+
+          <div class="user-info">
+            <label for="fullname">Full Name</label>
+            <input
+              type="text"
+              id="fullname"
+              placeholder="Albert Vanderbaum"
+              required
+            />
+
+            <label for="phone">Phone Number</label>
+            <input
+              type="tel"
+              id="phone"
+              placeholder="+90 555 555 55 55"
+              required
+            />
+
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="albert@example.com"
+              required
+            />
+          </div>
+        </section>
+
+        <aside class="summary">
+          <h2>Your Appointment</h2>
+          <p>Date: <span id="selected-date">-</span></p>
+          <p>Time: <span id="selected-time">-</span></p>
+          <p>Name: <span id="selected-name">-</span></p>
+          <p>Mail: <span id="selected-mail">-</span></p>
+          <button id="confirm" disabled>Confirm Booking</button>
+        </aside>
+      </form>
+    </div>
+
+    <div class="container hidden" id="confirmation-message">
+      <header>
+        <i
+          class="fa-solid fa-circle-check fa-2xl"
+          style="color: rgba(1, 254, 19, 0.7)"
+        ></i>
+        <h1>Your appointment is confirmed</h1>
+      </header>
+      <div class="confirmation-details">
+        <p>Dear <span id="confirm-name"></span>,</p>
+        <p>
+          Your appointment has been scheduled for
+          <span id="confirm-date"></span> at <span id="confirm-time"></span>.
+        </p>
+        <p>The details have been sent to <span id="confirm-email"></span> and to your phone: <span id="confirm-phone"></span></p>
+      </div>
+      <div class="callUs">
+        <p>
+          <i class="fa-solid fa-circle-info"></i>
+          If you need help, call us or send an email. <a id="turnBack">Click here</a> to schedule a new appointment.
+        </p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
