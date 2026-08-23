@@ -1,0 +1,199 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px 16px;
+  background: #f5f5f5;
+  color: #1a1a1b;
+  font-family: Montserrat, sans-serif;
+}
+
+
+#posts-container, header {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.user-post {
+  width: 100%;
+  background: #fff;
+  border: 1px solid #d6d6d6;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  transition: all 0.2s ease
+}
+
+.user-post:hover {
+  border-color: #b8b8b8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* postlar için header kısmı */
+
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px 10px;
+}
+
+.user-avatar {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #edeff1;
+  border-radius: 50%;
+  color: #555;
+}
+
+.userIdText {
+  color: #555;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.preferences-for-posts {
+  margin-left: auto;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #666;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease
+}
+
+.preferences-for-posts:hover {
+  background: #f0f0f0;
+  color: #222;
+}
+
+/* body kısmı */
+.post-body {
+  padding: 4px 16px 16px;
+}
+
+.post-title {
+  margin-bottom: 8px;
+  color: #222;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.post-text {
+  color: #333;
+  font-size: 15px;
+  line-height: 1.55;
+  font-family: Mulish, sans-serif;
+}
+
+/* footer */
+.post-footer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px 14px;
+}
+.postButtons {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 34px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 18px;
+  background: #f0f0f0;
+  color: #555;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.postButtons:hover {
+  background: #e5e5e5;
+  color: #222;
+}
+
+.postButtons:active {
+  transform: scale(0.96);
+}
+
+
+.likeBtn:hover {
+  color: #e04b23;
+}
+
+.disslikeBtn:hover {
+  color: #5b5bd6;
+}
+
+
+.postButtons:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.postButtons:disabled:hover {
+  background: #f0f0f0;
+  color: #555;
+}
+
+.postButtons i {
+  font-size: 14px;
+}
+.user-avatar i {
+  font-size: 15px;
+}
+
+
+
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px 8px;
+  }
+
+  .user-post {
+    border-radius: 6px;
+  }
+
+  .post-header {
+    padding: 12px 12px 8px;
+  }
+
+  .post-body {
+    padding: 4px 12px 14px;
+  }
+
+  .post-footer {
+    padding: 6px 12px 12px;
+  }
+
+  .post-title {
+    font-size: 17px;
+  }
+
+  .post-text {
+    font-size: 14px;
+  }
+
+  .postButtons {
+    min-height: 36px;
+    padding: 6px 10px;
+  }
+}
