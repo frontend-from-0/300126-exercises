@@ -68,19 +68,11 @@ function addToCart(productName) {
 }
 
 function removeFromCart(productName) {
-  if (products[productName].quantity >= 1) {
-    products[productName].quantity -= 1;
-    const productQuantitySpan = document.getElementById(
-      productName + '_quantity',
-    );
-    productQuantitySpan.textContent = products[productName].quantity;
-    updateTotal();
-    saveCart();
-  } else {
-    document
-      .getElementById(productName + '_remove')
-      .setAttribute('disabled', 'true');
-  }
+  products[productName].quantity = 0;
+  document.getElementById(productName + "_quantity").textContent = 0;
+  updateCartUI(productName);
+  updateTotal();
+  saveCart();
 }
 
 function updateTotal() {
