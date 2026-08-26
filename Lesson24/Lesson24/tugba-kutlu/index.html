@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Users</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Users</h1>
+      <nav>
+        <button id="fetchUsersButton" class="button">Fetch Users</button>
+        <a href="./pages/create.html" id="createUserButton" class="button"
+          >Create User</a
+        >
+      </nav>
+    </header>
+    <main>
+      <div>
+        <p
+          class="hidden"
+          id="statusMessage"
+          role="status"
+          aria-live="polite"
+        ></p>
+      </div>
+      <ul class="container" id="container" aria-label="User list"></ul>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
