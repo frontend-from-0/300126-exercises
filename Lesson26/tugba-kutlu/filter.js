@@ -270,7 +270,7 @@ console.log(availableItems)
 // Exercise 7:
 // Given an array of numbers, filter out the numbers that are divisible by 3.
 const numbersExercise7 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const filteredNumbers = numbersExercise7.filter((num) => (num % 3) == 0);
+const divisibleByThree = numbersExercise7.filter((num) => (num % 3) == 0);
 
 console.log('Ex7')
 console.log(filteredNumbers);
