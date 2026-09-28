@@ -46,6 +46,6 @@ console.log(sortedAges);
 // Expected output: ["pen", "book", "paper", "pencil", "notebook"]
 
 const words = ['notebook', 'pen', 'paper', 'book', 'pencil'];
-const wordLength = words.sort((word1, word2)=> word1.length - word2.length);
+const wordsSortedByLength = words.sort((word1, word2)=> word1.length - word2.length);
 console.log("Ex5");
 console.log(wordLength);
