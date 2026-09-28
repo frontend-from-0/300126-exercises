@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update User</title>
+    <link rel="stylesheet" type="text/css" href="../styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Update User</h1>
+    </header>
+    <main>
+      <form method="POST" id="updateUserForm">
+        <label for="firstName">First name</label>
+        <input type="text" id="firstName" name="firstName" required />
+
+        <button type="submit" class="button button--success">
+          Update user
+        </button>
+      </form>
+      <div>
+        <p
+          class="hidden"
+          id="statusMessage"
+          role="status"
+          aria-live="polite"
+        ></p>
+      </div>
+    </main>
+
+    <script src="update.js"></script>
+  </body>
+</html>
