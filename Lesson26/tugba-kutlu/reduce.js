@@ -22,7 +22,7 @@ console.log(result);
 const numbersEx2 = [8, 3, 11, 6, 4];
 const maxNumber = numbersEx2.reduce((acc, num) => {
   return acc > num ? acc : num;
-});
+}, -Infinity);
 console.log("Ex2");
 console.log(maxNumber);
 
