@@ -21,7 +21,7 @@ const wordsExercise2 = [
   "jungle",
 ];
 
-const wordFilterA = wordsExercise2.filter((word) => word.includes("a"));
+const wordsIncludesLetterA = wordsExercise2.filter((word) => word.includes("a"));
 console.log("Ex.2");
 console.log(wordFilterA);
 
