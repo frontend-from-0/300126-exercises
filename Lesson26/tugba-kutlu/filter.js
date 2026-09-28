@@ -451,6 +451,6 @@ const usersExercise10 = [
   },
 ];
 
-const nameWithoutStartsJ = usersExercise10.filter((word) => !word.name.split('')[0].toUpperCase().includes('J'));
+const namesNotStartingWithJ = usersExercise10.filter((word) => !word.name.split('')[0].toUpperCase().includes('J'));
 console.log(nameWithoutStartsJ);
 console.log('Ex10')
