@@ -159,7 +159,7 @@ const usersExercise4 = [
   },
 ];
 
-const ageFilter = usersExercise4.filter((person) => person.age >= 25);
+const olderThan25 = usersExercise4.filter((person) => person.age >= 25);
 
 console.log("Ex.4");
 console.log(ageFilter);
