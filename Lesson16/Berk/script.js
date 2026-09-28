@@ -75,8 +75,8 @@ findMax(["1", "2", "11"]);
    - Log the counts in the format: "Odd: X, Even: Y"
 */
 function countOddEven(numbers) {
-  let oddNumbersArray = [];
-  let evenNumbersArray = [];
+  let oddCount = 0;
+  let evenCount = 0;
 
   for (const item of numbers) {
     if (typeof item !== "number") {
@@ -86,13 +86,13 @@ function countOddEven(numbers) {
       return;
     }
     if (item % 2 === 0) {
-      evenNumbersArray.push(item);
+      evenCount++;
     } else {
-      oddNumbersArray.push(item);
+      oddCount++;
     }
   }
 
-  console.log("Ex.3:", `Odd: ${oddNumbersArray}, Even: ${evenNumbersArray}`);
+  console.log("Ex.3:", `Odd: ${oddCount}, Even: ${evenCount}`);
 }
 countOddEven([1, 2, 53, 6]);
 /*
@@ -252,8 +252,8 @@ function printObjectKeys(obj) {
     console.log("Not an object");
     return;
   }
-  for (const x in obj) {
-    console.log(x);
+  for (const key in obj) {
+    console.log(key);
   }
 }
 printObjectKeys({ name: "Alice", age: 25 });
