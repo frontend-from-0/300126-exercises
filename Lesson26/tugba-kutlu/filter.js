@@ -292,7 +292,7 @@ const wordsExercise8 = [
   "jungle",
 ];
 
-const wordWithMoreThen5char = wordsExercise8.filter((words) => words.length > 5);
+const wordWithMoreThan5char = wordsExercise8.filter((words) => words.length > 5);
 
 console.log('Ex8')
 console.log(wordWithMoreThen5char);
