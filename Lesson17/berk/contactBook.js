@@ -156,7 +156,7 @@ const addContact = (name, phone, email, contactList) => {
 
 */
 const findContact = (name, contactList) => {
-  if (typeof name !== "string" || !name.length) return;
+  if (typeof name !== "string" || !name.trim().length) return;
   if (!Array.isArray(contactList)) return;
   return contactList.find(
     (contact) => contact.name.toLowerCase() === name.toLowerCase(),
@@ -305,11 +305,13 @@ Contact Book in action.
 const sortByName = (contactList) => {
   if (!Array.isArray(contactList)) {
     console.log("Please provide a valid array.");
+    return;
   }
   if (contactList.length <= 0) {
     console.log("Please provide a non-empty array.");
+    return;
   }
-  let newList = [...contactList];
+  const newList = [...contactList];
 
   for (let i = 0; i < newList.length; i++) {
     for (let j = 0; j < newList.length - 1 - i; j++) {
@@ -317,9 +319,9 @@ const sortByName = (contactList) => {
       const name2 = newList[j + 1].name.toLowerCase();
 
       if (name1 > name2) {
-        const replaceName = newList[j];
+        const tempContact = newList[j];
         newList[j] = newList[j + 1];
-        newList[j + 1] = replaceName;
+        newList[j + 1] = tempContact;
       }
     }
   }
@@ -331,11 +333,13 @@ sortByName(generalContacts);
 const searchByField = (phone, contactList) => {
   if (!Array.isArray(contactList)) {
     console.log("Please provide a valid array.");
+    return;
   }
   if (typeof phone !== "string") {
-    console.log("Please provide a string value.");
+    console.log("Please provide a phone number as a string value.");
+    return;
   }
-  let result = [];
+  const result = [];
   for (let i = 0; i < contactList.length; i++) {
     if (contactList[i].phone === phone) {
       result.push(contactList[i]);
