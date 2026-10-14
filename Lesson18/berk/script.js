@@ -47,6 +47,10 @@ class Item {
 class ShoppingCart {
   // Private values
   #items;
+  #discountCodes = {
+    SAVE10: 10,
+    SAVE20: 20,
+  };
 
   // Instantiation method - constructor
   constructor() {
@@ -102,15 +106,12 @@ class ShoppingCart {
     return totalSum;
   }
   applyDiscount(code) {
-    const upperCodes = code.toUpperCase();
-    const discountCodes = {
-      SAVE10: 10,
-      SAVE20: 20,
-    };
-    let discountRate = 0;
-    for (const key in discountCodes) {
-      if (upperCodes === key) discountRate = discountCodes[key];
+    if (typeof code !== "string") {
+      console.log("Discount code must be a string.");
+      return this.getTotal();
     }
+    const upperCodes = code.toUpperCase();
+    const discountRate = this.#discountCodes[upperCodes] ?? 0;
 
     if (discountRate > 0) {
       const currentTotal = this.getTotal();
