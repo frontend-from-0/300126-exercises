@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Create User</title>
+    <link rel="stylesheet" type="text/css" href="../styles.css" />
+  </head>
+
+  <body>
+    <main class="page">
+      <h1 class="page-title">Create New User</h1>
+
+      <p class="status-message hidden" id="statusMessage"></p>
+
+      <form class="card user-form" id="createUserForm">
+        <label class="form-label" for="userId">User ID</label>
+        <input class="form-input" type="text" id="userId" disabled />
+
+        <label class="form-label" for="firstName">First Name</label>
+        <input class="form-input" type="text" id="firstName" required />
+
+        <label class="form-label" for="lastName">Last Name</label>
+        <input class="form-input" type="text" id="lastName" required />
+
+        <label class="form-label" for="email">Email</label>
+        <input class="form-input" type="email" id="email" required />
+
+        <label class="form-label" for="age">Age</label>
+        <input class="form-input" type="number" id="age" required />
+
+        <label class="form-label" for="phone">Phone</label>
+        <input class="form-input" type="text" id="phone" />
+
+        <label class="form-label" for="birthDate">Birth Date</label>
+        <input class="form-input" type="date" id="birthDate" />
+
+        <label class="form-label" for="gender">Gender</label>
+        <input class="form-input" type="text" id="gender" />
+
+        <label class="form-label" for="username">Username</label>
+        <input class="form-input" type="text" id="username" disabled />
+
+        <div class="form-buttons">
+          <button
+            type="submit"
+            id="createUserButton"
+            class="button button--success"
+          >
+            Create User
+          </button>
+
+          <a href="../index.html" class="button" id="cancelButton"> Cancel </a>
+
+          <a
+            href="../index.html"
+            class="button button--success hidden"
+            id="homeButton"
+          >
+            Return to Home
+          </a>
+        </div>
+      </form>
+    </main>
+
+    <script src="../app.js"></script>
+  </body>
+</html>

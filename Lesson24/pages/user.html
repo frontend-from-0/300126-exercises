@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+  <head>
+    <title>User Information</title>
+    <link rel="stylesheet" type="text/css" href="../styles.css" />
+  </head>
+
+  <body>
+    <main class="page">
+      <h1 class="page-title">User Information</h1>
+
+      <p class="status-message hidden" id="statusMessage"></p>
+
+      <form id="userForm" class="card user-form">
+        <label class="form-label" for="userId">User ID</label>
+        <input class="form-input" type="text" id="userId" disabled />
+
+        <label class="form-label" for="firstName">First Name</label>
+        <input class="form-input" type="text" id="firstName" disabled />
+
+        <label class="form-label" for="lastName">Last Name</label>
+        <input class="form-input" type="text" id="lastName" disabled />
+
+        <label class="form-label" for="email">Email</label>
+        <input class="form-input" type="email" id="email" disabled />
+
+        <label class="form-label" for="age">Age</label>
+        <input class="form-input" type="number" id="age" disabled />
+
+        <label class="form-label" for="phone">Phone</label>
+        <input class="form-input" type="text" id="phone" disabled />
+
+        <label class="form-label" for="birthDate">Birth Date</label>
+        <input class="form-input" type="text" id="birthDate" disabled />
+
+        <label class="form-label" for="gender">Gender</label>
+        <input class="form-input" type="text" id="gender" disabled />
+
+        <label class="form-label" for="username">Username</label>
+        <input class="form-input" type="text" id="username" disabled />
+
+        <div class="form-buttons" id="formButtons">
+          <button
+            type="button"
+            id="updateUserButton"
+            class="button button--success"
+          >
+            Update User
+          </button>
+
+          <button
+            type="button"
+            id="saveUserButton"
+            class="button button--success hidden"
+          >
+            Save Changes
+          </button>
+
+          <button type="button" id="cancelUpdateButton" class="button hidden">
+            Cancel
+          </button>
+
+          <a href="#" id="deleteUserButton" class="button button--danger">
+            Delete User
+          </a>
+
+          <a href="../index.html" class="button"> Home </a>
+        </div>
+      </form>
+    </main>
+
+    <script src="../app.js"></script>
+  </body>
+</html>
