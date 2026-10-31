@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.page-header {
+  background-color: #243b53;
+  color: white;
+  padding: 30px 0;
+  margin-bottom: 30px;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.page-header p {
+  margin: 5px 0 0;
+  color: #dce4ec;
+}
+
+.section-title {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.random-button {
+  padding: 12px 20px;
+  margin-bottom: 25px;
+  background-color: #243b53;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.random-button:hover:not(:disabled) {
+  background-color: #365675;
+}
+
+.random-button:focus-visible {
+  outline: 3px solid #4776b4;
+  outline-offset: 3px;
+}
+
+.random-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.posts-container {
+  max-width: 700px;
+}
+
+.post-card {
+  background-color: white;
+  padding: 25px;
+  border: 1px solid #e0e5eb;
+  border-radius: 8px;
+}
+
+.post-card h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #243b53;
+  font-size: 1.4rem;
+  overflow-wrap: anywhere;
+}
+
+.post-card p {
+  margin: 0;
+  color: #555;
+}
+
+.page-footer {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #e8edf3;
+  color: #555;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 92%;
+  }
+
+  .page-header {
+    padding: 24px 0;
+  }
+
+  .page-header h1 {
+    font-size: 1.7rem;
+  }
+
+  .post-card {
+    padding: 20px;
+  }
+
+  .post-card h2 {
+    font-size: 1.2rem;
+  }
+}
