@@ -1,0 +1,239 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 30px;
+}
+
+.page {
+  max-width: 850px;
+  margin: 30px auto;
+}
+
+.page-title {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #222;
+}
+
+.section-title {
+  font-size: 21px;
+  margin-bottom: 20px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.user-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  list-style: none;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #e1e5eb;
+  border-radius: 8px;
+  padding: 25px;
+}
+
+.card-title {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.card-body {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 140px;
+  min-height: 42px;
+  padding: 10px 16px;
+
+  border: none;
+  border-radius: 6px;
+
+  background-color: #e5e7eb;
+  color: #333;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.button:hover {
+  background-color: #d1d5db;
+}
+
+.button--success {
+  background-color: #198754;
+  color: #fff;
+}
+
+.button--success:hover {
+  background-color: #146c43;
+}
+
+.button--danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.button--danger:hover {
+  background-color: #bb2d3b;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 8px;
+  color: #444;
+}
+
+.form-input {
+  width: 100%;
+  padding: 11px 12px;
+
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  background-color: #fff;
+  color: #333;
+
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus {
+  border-color: #198754;
+}
+
+.form-input:disabled {
+  background-color: #e9ecef;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.form-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.confirmation-card {
+  margin-bottom: 20px;
+}
+
+.user-details {
+  margin-bottom: 20px;
+}
+
+.success-card {
+  margin-top: 20px;
+}
+
+.success-title {
+  color: #198754;
+  font-size: 21px;
+  margin-bottom: 12px;
+}
+
+.success-text {
+  margin-bottom: 15px;
+}
+
+.status-message {
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+
+.status-message--success {
+  background-color: #d1e7dd;
+  color: #0f5132;
+  border: 1px solid #badbcc;
+}
+
+.status-message--error {
+  background-color: #f8d7da;
+  color: #842029;
+  border: 1px solid #f5c2c7;
+}
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 15px;
+  }
+
+  .page {
+    margin: 15px auto;
+  }
+
+  .page-title {
+    font-size: 24px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .navigation {
+    flex-direction: column;
+  }
+
+  .navigation .button {
+    width: 100%;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-buttons .button {
+    width: 100%;
+  }
+}
