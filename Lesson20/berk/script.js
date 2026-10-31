@@ -16,15 +16,13 @@ const formContent = document.getElementById("form-content");
 const confirmation = document.getElementById("confirmation-message");
 const data = { date: "", time: "", username: "", email: "" };
 
-const minTommorrow = new Date();
-minTommorrow.setDate(minTommorrow.getDate() + 1);
-dateInput.min = minTommorrow.toISOString().split("T")[0];
+const minTomorrow = new Date();
+minTomorrow.setDate(minTomorrow.getDate() + 1);
+dateInput.min = minTomorrow.toISOString().split("T")[0];
 
 dateInput.addEventListener("change", function () {
-  let dateValue = dateInput.value;
+  const dateValue = dateInput.value;
   const selectedDate = new Date(dateValue).toLocaleDateString("en-GB");
-
-  console.log(`DateInput Value, ${dateInput.value}, ${typeof dateInput.value}`);
 
   if (!selectedDate || selectedDate === "Invalid Date") {
     selectedDateText.textContent = "-";
@@ -36,12 +34,9 @@ dateInput.addEventListener("change", function () {
   allowSubmit();
 });
 
-console.log(timeRadios);
-
 timeRadios.forEach((radio) => {
   radio.addEventListener("change", function () {
     const selectedTime = radio.value;
-    console.log("Seçilen saat:", selectedTime);
     selectedTimeText.textContent = selectedTime;
     data.time = selectedTime;
     allowSubmit();
@@ -49,11 +44,11 @@ timeRadios.forEach((radio) => {
 });
 
 userNameInput.addEventListener("change", function () {
-  let userNameValue = userNameInput.value.trim();
-  console.log(`userNameInput Value, ${userNameValue}, ${typeof userNameValue}`);
+  const userNameValue = userNameInput.value.trim();
 
-  if (typeof userNameValue === "") {
+  if (userNameValue === "") {
     selectedUserNameText.textContent = "-";
+    data.username = "";
   } else {
     selectedUserNameText.textContent = userNameValue;
     data.username = userNameValue;
@@ -62,11 +57,11 @@ userNameInput.addEventListener("change", function () {
 });
 
 emailInput.addEventListener("change", function () {
-  let emailValue = emailInput.value.trim();
-  console.log(`emailInput Value, ${emailValue}, ${typeof emailValue}`);
+  const emailValue = emailInput.value.trim();
 
-  if (typeof emailValue === "") {
+  if (emailValue === "") {
     selectedEmailText.textContent = "-";
+    data.email = "";
   } else {
     selectedEmailText.textContent = emailValue;
     data.email = emailValue;
@@ -84,7 +79,6 @@ function allowSubmit() {
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
-  console.log(event);
   formContent.classList.add("hidden");
   confirmation.classList.remove("hidden");
 });
