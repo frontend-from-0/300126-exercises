@@ -31,8 +31,8 @@ const people = [
   { name: "Ellen", age: 22 },
 ];
 
-const descendingAge = [...people].sort((a, b) => b.age - a.age);
-console.log("Exercise 4", descendingAge);
+const ascendingAge = [...people].sort((a, b) => a.age - b.age);
+console.log("Exercise 4", ascendingAge);
 
 // Exercise 5: Complex Sorting
 // Sort an array of strings by their length.
