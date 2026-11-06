@@ -21,6 +21,8 @@ console.log(wordsExercise1);
 // Exercise 2:
 // Given an array of numbers, square each number using .map().
 const numbersExercise2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const squaredNumbers = numbersExercise2.map((number) => number ** 2);
+console.log(squaredNumbers);
 
 // Exercise 3:
 // Given an array of objects representing products, extract an array of their names using .map().
