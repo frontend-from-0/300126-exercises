@@ -165,7 +165,7 @@ const usersExercise4 = [
   },
 ];
 
-const youngerUser = usersExercise4.filter((user) => user.age <= 25);
+const youngerUser = usersExercise4.filter((user) => user.age < 25);
 
 console.log(youngerUser);
 
