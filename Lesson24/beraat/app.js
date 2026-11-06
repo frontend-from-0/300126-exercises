@@ -200,7 +200,7 @@ if (document.getElementById("userForm")) {
 
         setEditing(true);
 
-        showMessage(statusMessage, "User created successfully!", "success");
+        showMessage(statusMessage, "User updated successfully!", "success");
       })
       .catch((error) => {
         showMessage(statusMessage, "An error occurred. " + error);
