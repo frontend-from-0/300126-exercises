@@ -22,7 +22,8 @@ function hideMessage(element) {
 }
 
 function getUserId() {
-  return window.location.search.split("=")[1];
+  const params = new URLSearchParams(window.location.search);
+  return params.get("userId");
 }
 
 function getUserFormData() {
