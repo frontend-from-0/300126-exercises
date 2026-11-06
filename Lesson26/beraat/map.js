@@ -203,7 +203,7 @@ const sentencesExercise7 = [
   "The room was filled with laughter and joy.",
 ];
 
-const splitSentence = sentencesExercise7.map((number) => number.split(" "));
+const splitSentence = sentencesExercise7.map((sentence) => sentence.split(" "));
 console.log(splitSentence);
 
 // Exercise 8:
