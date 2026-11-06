@@ -294,7 +294,7 @@ const wordsExercise8 = [
   "island",
   "jungle",
 ];
-const longerWords = wordsExercise8.filter((word) => word.length >= 5);
+const longerWords = wordsExercise8.filter((word) => word.length > 5);
 console.log(wordsExercise8);
 console.log(longerWords);
 
