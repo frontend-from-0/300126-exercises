@@ -63,7 +63,7 @@ body {
   cursor: not-allowed;
 }
 
-.posts-container {
+#posts-container {
   max-width: 700px;
 }
 
