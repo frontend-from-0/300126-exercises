@@ -4,6 +4,27 @@ const randomButton = document.getElementById("random-button");
 let posts = [];
 let currentIndex = -1;
 
+
+function displayAllPosts() {
+  postsContainer.innerHTML = "";
+
+  posts.forEach((post) => {
+    const postElement = document.createElement("article");
+    const titleElement = document.createElement("h2");
+    const bodyElement = document.createElement("p");
+
+    titleElement.textContent = post.title;
+    bodyElement.textContent = post.body;
+
+    postElement.classList.add("post-card");
+
+    postElement.appendChild(titleElement);
+    postElement.appendChild(bodyElement);
+
+    postsContainer.appendChild(postElement);
+  });
+}
+
 function displayPost(index) {
   const post = posts[index];
 
@@ -52,7 +73,7 @@ fetch("https://jsonplaceholder.typicode.com/posts")
     randomButton.disabled = false;
     randomButton.textContent = "Show Another Random Post";
 
-    showRandomPost();
+    displayAllPosts();
   })
   .catch((error) => {
     console.error("Error:", error);
