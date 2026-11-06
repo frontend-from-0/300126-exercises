@@ -31,7 +31,7 @@ function displayPost(index) {
   postsContainer.innerHTML = "";
 
   const postElement = document.createElement("article");
-  const titleElement = document.createElement("h2");
+  const titleElement = document.createElement("h3");
   const bodyElement = document.createElement("p");
 
   titleElement.textContent = post.title;
