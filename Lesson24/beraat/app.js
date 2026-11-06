@@ -39,14 +39,18 @@ function getUserFormData() {
   };
 }
 
-function getNextUserId() {
+function createUser(userData) {
   return apiRequest(
-    "https://dummyjson.com/users?limit=0",
-    undefined,
-    "Failed to fetch users",
-  ).then((data) => {
-    return data.users.length + 1;
-  });
+    "https://dummyjson.com/users/add",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userData),
+    },
+    "Failed to create user",
+  );
 }
 
 function fillUserForm(user) {
@@ -298,11 +302,10 @@ if (document.getElementById("createUserForm")) {
 
   let nextUserId;
 
-  getNextUserId()
-    .then((userId) => {
-      nextUserId = userId;
-      userIdInput.value = nextUserId;
-    })
+createUser(newUser)
+  .then((user) => {
+    successMessage.textContent =
+      `User created successfully! ID: ${user.id}`;
     .catch((error) => {
       showMessage(statusMessage, "An error occurred. " + error);
     });
