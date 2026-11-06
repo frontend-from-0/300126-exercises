@@ -1,0 +1,186 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-body-bg: #eaf4f1;
+  --color-surface: #ffffff;
+  --color-surface-light: #fcfcfc;
+  --color-surface-secondary: #f4f6f5;
+  --color-surface-secondary-hover: #e8ecea;
+
+  --color-text: #2f3e46;
+  --color-text-secondary: #55635d;
+  --color-subtitle: #6b7b75;
+  --color-placeholder: #a1afa9;
+
+  --color-primary: #4f7c6b;
+  --color-primary-hover: #41685a;
+  --color-primary-dark: #355c4a;
+
+  --color-border: #cad8d3;
+  --color-border-secondary: #d5ddda;
+
+  --color-error: #c94c4c;
+
+  --color-button-secondary-text: #4d5a56;
+  --color-white: #ffffff;
+
+  --shadow-card: 0 8px 20px rgba(0, 0, 0, 0.08);
+  --shadow-focus: 0 0 0 4px rgba(79, 124, 107, 0.15);
+  --outline-focus: 3px solid rgba(79, 124, 107, 0.25);
+
+  --fs-sm: 14px;
+  --fs-md: 16px;
+}
+
+body {
+  background-color: var(--color-body-bg);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: var(--color-text);
+}
+
+main {
+  max-width: 900px;
+  margin: 70px auto;
+  padding: 20px;
+}
+
+form,
+.success-card {
+  max-width: 550px;
+  margin: auto;
+  background-color: var(--color-surface);
+  border-radius: 16px;
+  padding: 35px;
+  box-shadow: var(--shadow-card);
+}
+
+h1,
+h2 {
+  text-align: center;
+  color: var(--color-primary-dark);
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--color-subtitle);
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-label {
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--color-primary-dark);
+}
+
+.form-input {
+  padding: 14px 16px;
+  border: 2px solid var(--color-border);
+  border-radius: 10px;
+  font-size: var(--fs-md);
+  background-color: var(--color-surface-light);
+  color: var(--color-text);
+  transition: 0.25s;
+}
+
+.form-input::placeholder {
+  color: var(--color-placeholder);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-focus);
+}
+
+.form-input[aria-invalid="true"] {
+  border-color: var(--color-error);
+}
+
+.input-error {
+  margin-top: 6px;
+  font-size: var(--fs-sm);
+  color: var(--color-error);
+}
+
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.button-group button {
+  flex: 1;
+}
+
+.btn-primary {
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-size: var(--fs-md);
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  padding: 15px;
+  border: 2px solid var(--color-border-secondary);
+  border-radius: 10px;
+  background-color: var(--color-surface-secondary);
+  color: var(--color-button-secondary-text);
+  font-size: var(--fs-md);
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-surface-secondary-hover);
+  transform: translateY(-2px);
+}
+
+.btn-primary:focus,
+.btn-secondary:focus {
+  outline: var(--outline-focus);
+}
+
+.success-card {
+  text-align: center;
+}
+
+.success-head {
+  margin-bottom: 20px;
+}
+
+.success-text {
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin-bottom: 12px;
+}
+
+.success-btn {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.hidden {
+  display: none;
+}
