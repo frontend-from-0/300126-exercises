@@ -30,6 +30,9 @@ const cardError = document.getElementById("cardError");
 const expDateError = document.getElementById("expDateError");
 const cvvError = document.getElementById("cvvError");
 
+const inputs = form.querySelectorAll("input");
+const errors = document.querySelectorAll(".input-error");
+
 let formValid = true;
 
 function showError(input, errorElement, message) {
@@ -142,13 +145,13 @@ function validateCVV() {
 function clearForm() {
   form.reset();
 
-  const inputs = form.querySelectorAll("input");
+
 
   inputs.forEach(function (input) {
     input.setAttribute("aria-invalid", "false");
   });
 
-  const errors = document.querySelectorAll(".input-error");
+ 
 
   errors.forEach(function (error) {
     error.textContent = "";
