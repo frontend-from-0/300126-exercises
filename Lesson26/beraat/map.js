@@ -176,7 +176,7 @@ const studentsExercise5 = [
 ];
 
 const studentAndGrade = studentsExercise5.map(
-  (student) => student.name + " " + student.grade,
+  (student) => `${student.name} ${student.grade}`,
 );
 console.log(studentAndGrade);
 
@@ -341,7 +341,7 @@ const booksExercise9 = [
 ];
 
 const titleAndAuthor = booksExercise9.map(
-  (book) => book.title + " " + book.author,
+  (book) => `${book.title} ${book.author}`,
 );
 
 console.log(titleAndAuthor);
@@ -350,5 +350,5 @@ console.log(titleAndAuthor);
 // Given an array of prices, add a currency symbol to each price using .map().
 const pricesExercise10 = [1999, 899, 1499, 299, 399, 999, 499, 649, 99, 129];
 
-const currencySymbol = pricesExercise10.map((price) => "$" + price);
+const currencySymbol = pricesExercise10.map((price) => `$${price}`);
 console.log(currencySymbol);
