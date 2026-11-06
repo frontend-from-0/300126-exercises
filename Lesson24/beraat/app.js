@@ -83,7 +83,7 @@ if (document.getElementById("fetchUsersButton")) {
         data.users.forEach((user) => createUserCard(user));
       })
       .catch((error) => {
-        showMessage(statusMessage, "An error occurred. " + error);
+        showMessage(statusMessage, `An error occurred. ${error.message}`);
       });
   });
 
