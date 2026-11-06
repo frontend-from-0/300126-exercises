@@ -74,31 +74,15 @@ function validatePhone() {
   }
 }
 
-function validateFirstName() {
-  const value = firstNameInput.value.trim();
+function validateName(input, errorElement, fieldName) {
+  const value = input.value.trim();
 
   if (value === "") {
-    showError(firstNameInput, firstNameError, "First name is required.");
+    showError(input, errorElement, `${fieldName} is required.`);
   } else if (!namePattern.test(value)) {
-    showError(
-      firstNameInput,
-      firstNameError,
-      "Please enter a valid first name.",
-    );
+    showError(input, errorElement, `Please enter a valid ${fieldName.toLowerCase()}.`);
   } else {
-    hideError(firstNameInput, firstNameError);
-  }
-}
-
-function validateLastName() {
-  const value = lastNameInput.value.trim();
-
-  if (value === "") {
-    showError(lastNameInput, lastNameError, "Last name is required.");
-  } else if (!namePattern.test(value)) {
-    showError(lastNameInput, lastNameError, "Please enter a valid last name.");
-  } else {
-    hideError(lastNameInput, lastNameError);
+    hideError(input, errorElement);
   }
 }
 
