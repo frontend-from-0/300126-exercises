@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Users</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+
+  <body>
+    <main class="page">
+      <nav class="navigation">
+        <button id="fetchUsersButton" class="button">Fetch Users</button>
+
+        <a
+          href="./pages/create.html"
+          id="createUserButton"
+          class="button button--success"
+        >
+          Create User
+        </a>
+      </nav>
+
+      <p class="status-message hidden" id="statusMessage"></p>
+
+      <ul class="user-list" id="container"></ul>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
