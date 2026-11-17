@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Latest Posts</title>
+
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+
+  <body>
+    <header class="page-header">
+      <div class="container">
+        <h1>Latest Posts</h1>
+        <p>Explore posts fetched from the JSONPlaceholder API.</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section aria-labelledby="posts-heading">
+        <h2 id="posts-heading">Discover a Post</h2>
+
+        <button class="random-button" id="random-button" type="button" disabled>
+          Loading posts...
+        </button>
+
+        <div id="posts-container" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <p>Posts provided by JSONPlaceholder</p>
+    </footer>
+  </body>
+</html>
